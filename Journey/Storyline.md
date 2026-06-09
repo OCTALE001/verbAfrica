@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-06-09 — Beta testing kicks off: cohort first
+
+Pushed Phase 2 to the public site and sent it to the cohort to test as themselves. Two firsts in one go:
+
+**First public release** of the redesigned platform — cohort + images + working enquiry forms behind the scenes. Before pushing we caught a privacy thing I'd missed: phone numbers and emails of the cohort were rendering openly on the detail view. Anyone who opened the page could copy them. Hidden them on the public profile and replaced with a "Contact via verbAfrica" button that routes through the enquiry form (and therefore through me). Keeps my "I'm the gatekeeper during beta" decision honest, and protects cohort contact info from random visitors.
+
+**First feedback collection.** Auto-created a Google Form via the Apps Script (same script that handles bookings — keeps everything in one place). Nine questions, designed to be fillable in 5 min, structured around what we actually need to learn: does the profile feel like you, what's missing, would you share this with a client, what's clunky. Linked as a "💬 Send feedback →" button in the site footer, also shareable as a direct link via WhatsApp.
+
+This is the **first time something we built is sitting in front of users who aren't me**. The next 2–3 days are going to be the most honest signal we've had about whether the platform reads as serious, useful, and embarrassing-free. Whatever comes back goes straight into the Storyline.
+
+---
+
 ## 2026-06-09 — Forms are alive
 
 End-to-end verified: a real submission on the platform → row in the `Bookings` sheet → email notification to me. Took longer than expected to debug — the wrinkle was a quiet one. When you Deploy in Google Apps Script, it **snapshots** the script as a versioned copy. Every edit after that lives in the editor but doesn't run when the web app URL is called. The deployment was running an early version with the placeholder `SHEET_ID`, silently failing in the catch block, and returning "Completed" with no logs. We chased our tail for a while before the redeploy fixed it.
