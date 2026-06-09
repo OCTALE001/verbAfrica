@@ -30,6 +30,10 @@
   --radius-sm:    9px;
   --gap:          20px;
 }
+.detail-avatar,.shortlist-item-avatar,.compare-slot-avatar,.compare-col-avatar,
+.brief-match-avatar,.cp-sel-avatar,.cp-welcome-avatar,.cp-epk-avatar-lg{
+  background-size:cover;background-position:center top;
+}
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{
@@ -1590,6 +1594,8 @@ let state = {
 /* ─── HELPERS ───────────────────────────────────────── */
 const $ = id => document.getElementById(id);
 function initials(n){ return n.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase(); }
+function avatarBg(c){ return c.image ? `style="background-image:url('${c.image}')"` : ''; }
+function avatarText(c){ return c.image ? '' : initials(c.name); }
 function showToast(msg, type=''){
   const t = $('toast'); t.textContent = msg; t.className = 'toast show'+(type?' '+type:'');
   setTimeout(()=>{ t.className='toast'; }, 2400);
@@ -1776,7 +1782,7 @@ function renderShortlist(){
   const items = state.shortlist.map(id => creatives.find(c=>c.id===id)).filter(Boolean);
   g.innerHTML = items.map(c=>`
     <div class="shortlist-item">
-      <div class="shortlist-item-avatar">${initials(c.name)}</div>
+      <div class="shortlist-item-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
       <div class="shortlist-item-info">
         <div class="shortlist-item-name">${c.name}</div>
         <div class="shortlist-item-role">${c.role}</div>
@@ -1828,7 +1834,7 @@ function updateCompareBar(){
     if(id !== undefined){
       const c = creatives.find(x=>x.id===id);
       return `<div class="compare-slot filled">
-        <div class="compare-slot-avatar">${initials(c.name)}</div>
+        <div class="compare-slot-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
         <div><div class="compare-slot-name">${c.name}</div><div class="compare-slot-role">${c.role}</div></div>
         <button class="compare-slot-remove" onclick="toggleCompare(${id})">✕</button>
       </div>`;
@@ -1849,7 +1855,7 @@ function openCompareModal(){
   cols.innerHTML = items.map(c=>`
     <div class="compare-col">
       <div class="compare-col-head">
-        <div class="compare-col-avatar">${initials(c.name)}</div>
+        <div class="compare-col-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
         <div><div class="compare-col-name">${c.name}</div><div class="compare-col-role">${c.role}</div></div>
       </div>
       <div class="compare-section">
@@ -1900,7 +1906,7 @@ function showProfile(id){
   $('detailCard').innerHTML = `
     <button class="close-btn" onclick="closeDetailDirect()">✕</button>
     <div class="detail-head">
-      <div class="detail-avatar">${initials(c.name)}</div>
+      <div class="detail-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
       <div style="flex:1">
         <div class="detail-name">${c.name}${c.isNew?'<span class="new-badge">New</span>':''}</div>
         <div class="detail-role">${c.role}</div>
@@ -2061,7 +2067,7 @@ function matchBrief(){
   section.style.display='block';
   list.innerHTML = matched.map((c,i)=>`
     <div class="brief-match-card">
-      <div class="brief-match-avatar">${initials(c.name)}</div>
+      <div class="brief-match-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
       <div class="brief-match-info">
         <div class="brief-match-name">${c.name}</div>
         <div class="brief-match-role">${c.role} &bull; ${c.location}</div>
@@ -2146,7 +2152,11 @@ function cpEnterCreative(id) {
   // Update welcome banner
   $('cpWelcomeName').textContent = c.name;
   $('cpWelcomeRole').textContent = c.role;
-  $('cpWelcomeAvatar').textContent = initials(c.name);
+  const _av=$('cpWelcomeAvatar');
+  _av.textContent=c.image?'':initials(c.name);
+  _av.style.backgroundImage=c.image?`url('${c.image}')`:'';
+  _av.style.backgroundSize='cover';
+  _av.style.backgroundPosition='center top';
 
   // Stats: shortlist count (random seeded)
   $('cpShortlistCount').textContent = 5 + (c.id * 7 % 23);
@@ -2257,7 +2267,7 @@ function cpRenderEpk(c) {
   $('cpEpkContent').innerHTML = `
     <div class="cp-epk-card">
       <div class="cp-epk-banner">
-        <div class="cp-epk-avatar-lg">${initials(c.name)}</div>
+        <div class="cp-epk-avatar-lg" ${avatarBg(c)}>${avatarText(c)}</div>
         <div>
           <div class="cp-epk-title">${c.name}</div>
           <div class="cp-epk-subtitle">${c.role} &nbsp;·&nbsp; ${c.location || 'South Africa'}</div>
@@ -2391,7 +2401,7 @@ function cpRenderSelectGrid() {
   grid.innerHTML = creatives.map(c => `
     <div class="cp-sel-card" onclick="cpEnterCreative(${c.id})">
       ${c.isNew ? '<div class="cp-sel-new">New</div>' : ''}
-      <div class="cp-sel-avatar">${initials(c.name)}</div>
+      <div class="cp-sel-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
       <div class="cp-sel-name">${c.name}</div>
       <div class="cp-sel-role">${c.role}</div>
       <div class="cp-sel-cat">${catLabels[c.filters[0]] || c.filters[0]}</div>
