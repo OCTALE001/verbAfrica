@@ -1,0 +1,480 @@
+[
+  {
+    "id": 0,
+    "name": "Chef Nqobi",
+    "image": "images/Chef_Nqobi.JPG",
+    "role": "Culinary Artist / Food Filmmaker / Content Creator",
+    "location": "Johannesburg",
+    "genres": [
+      "Food Content",
+      "Culinary Arts",
+      "Food Filmmaking",
+      "Event Curation"
+    ],
+    "filters": [
+      "content"
+    ],
+    "minRate": 0,
+    "rateLabel": "POA",
+    "bio": "Culinary artist and filmmaker from Johannesburg who brings people together through food, music and film. Culinary Director of TastyTing & Taste The Beat — food series dedicated to simplifying recipes creatively. Co-founder of Melodies and Munchies, a multi-artistic event series merging live music with a culinary experience.",
+    "highlights": [
+      "Culinary Director: TastyTing & Taste The Beat food series",
+      "Co-founder: Melodies and Munchies (live music x culinary event series)",
+      "Trained at Hilton Hotel Sandton & ANEW Hotels (multiple locations)",
+      "YouTube channel hosting TastyTing cooking episodes",
+      "Known for experimental food curiosity fused with music and film"
+    ],
+    "notable": [
+      "TastyTing (YouTube food show)",
+      "Taste The Beat (food content series)",
+      "Melodies and Munchies (music x food event series)"
+    ],
+    "rates": [
+      {
+        "label": "Culinary / Content / Event Curation",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "instagram": "@chefnqobi",
+      "email": "chefnqobi@gmail.com"
+    },
+    "isNew": true
+  },
+  {
+    "id": 1,
+    "name": "DG-TAL Format",
+    "role": "Post Production Company",
+    "location": "South Africa",
+    "genres": [
+      "Post Production",
+      "Motion Graphics",
+      "Graphic Design",
+      "2D/3D Animation",
+      "DIT"
+    ],
+    "filters": [
+      "post-production",
+      "content"
+    ],
+    "minRate": 1000,
+    "rateLabel": "from R1,000",
+    "bio": "One-stop creative hub for all post-production: DIT, Data Wrangling, Offline & Online Editing, Motion Graphics, Graphic Design and final delivery. Clients include Netflix, Showmax, MultiChoice, SABC, Standard Bank, UNICEF, Ballantine's. \"DG-TAL Format is Art.\"",
+    "highlights": [
+      "Netflix SAFTA award: 'The Letter Reader' (2019)",
+      "Netflix/Showmax: Love Lives Here, Baby Mamas 2, Mother The Law, Mother To Mother",
+      "MultiChoice: Korobela, Wangthembisa, Somathekisi, uShuni Womhlaba",
+      "Clients: SABC, Standard Bank, UNICEF, Ballantine's, Prime Video, Telkom, Gallo Music Publishers, Ukhozi FM, Niki's Jazz Restaurant, Tape Gang",
+      "Tools: Adobe Suite, DaVinci Resolve, Blender, Cinema 4D, NukeX"
+    ],
+    "notable": [
+      "The Letter Reader (Netflix/SAFTA)",
+      "Love Lives Here (Showmax)",
+      "Baby Mamas 2 (2024)",
+      "Wangthembisa (MultiChoice)",
+      "Daily Thetha (SABC 1, 2020–Present)"
+    ],
+    "rates": [
+      {
+        "label": "Long Format (offline, online, grade, subs, mix)",
+        "price": "from R35,000"
+      },
+      {
+        "label": "Short Format",
+        "price": "from R15,000"
+      },
+      {
+        "label": "Offline & Online Editing",
+        "price": "from R9,000"
+      },
+      {
+        "label": "GFX / Motion Graphics / Animation",
+        "price": "from R15,000"
+      },
+      {
+        "label": "Event Poster Design",
+        "price": "R1,000 – R2,500"
+      },
+      {
+        "label": "Logo Design",
+        "price": "R1,000 – R2,500"
+      },
+      {
+        "label": "DIT / Data Wrangling",
+        "price": "R3,000/day"
+      },
+      {
+        "label": "Film Poster Design",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "phone": "+27 79 691 7213",
+      "email": "thandom.dgtal.format@gmail.com"
+    },
+    "isNew": true
+  },
+  {
+    "id": 2,
+    "name": "Fifi Frequency",
+    "image": "images/Fifi01.JPG",
+    "role": "MC / Broadcaster / Voice-over Artist",
+    "location": "Johannesburg",
+    "genres": [
+      "MC",
+      "Radio",
+      "Voice-over",
+      "Content"
+    ],
+    "filters": [
+      "mc",
+      "content"
+    ],
+    "minRate": 1300,
+    "rateLabel": "from R1,300",
+    "bio": "Refilwe Katong (Fifi Frequency) — female SA broadcaster, voice-over artist and established MC. YFM freelance presenter & digital content producer. Shared stages with Zakes Bantwini, Kamo Mphela, DJ Zintle.",
+    "highlights": [
+      "YFM presenter & digital content producer",
+      "UJFM #TheUrbanBrunch (9AM–12PM weekdays)",
+      "#UJFMtop30 — Liberty Radio Award nomination",
+      "Hosted MusicEx 2024 & Mr & Miss UJ 2024",
+      "#ThePlaygroundOnY and #NightsLikeThis on YFM"
+    ],
+    "notable": [
+      "The Urban Brunch (UJFM)",
+      "UJFMtop30"
+    ],
+    "rates": [
+      {
+        "label": "MCing (2hrs)",
+        "price": "R3,000"
+      },
+      {
+        "label": "Voice-over (60sec)",
+        "price": "R2,800"
+      },
+      {
+        "label": "Digital Content (3hrs)",
+        "price": "R1,300"
+      }
+    ],
+    "contact": {
+      "instagram": "@fifi_frequency",
+      "phone": "0727098118",
+      "email": "feighkatong@gmail.com"
+    },
+    "isNew": false
+  },
+  {
+    "id": 3,
+    "name": "Hāzy",
+    "role": "Audio Engineer / Music Producer",
+    "location": "South Africa",
+    "genres": [
+      "Audio Engineering",
+      "Mixing",
+      "Mastering",
+      "Post Production"
+    ],
+    "filters": [
+      "post-production"
+    ],
+    "minRate": 500,
+    "rateLabel": "from R500",
+    "bio": "Professional audio engineer offering comprehensive post-production: recording, mixing and mastering across music, podcasts and voiceovers. Multi-booking discounts up to 40%. iTunes Master badge service available.",
+    "highlights": [
+      "30% off 5+ demo recordings",
+      "40% off 5+ final mixes",
+      "iTunes Master badge service",
+      "Up to 4 revisions per mix & master",
+      "Non-refundable 50% deposit to book"
+    ],
+    "notable": [
+      "Post-production: music, podcasts, voiceovers"
+    ],
+    "rates": [
+      {
+        "label": "Music Recording / demo",
+        "price": "R700"
+      },
+      {
+        "label": "Final Mix / demo",
+        "price": "R1,200"
+      },
+      {
+        "label": "Stereo Mastering / mix",
+        "price": "R600"
+      },
+      {
+        "label": "Stem Master / mix",
+        "price": "R900"
+      },
+      {
+        "label": "iTunes Master / mix",
+        "price": "R1,200"
+      },
+      {
+        "label": "Podcast Recording (30min)",
+        "price": "R1,200"
+      },
+      {
+        "label": "Podcast Final Mix (30min)",
+        "price": "R1,800"
+      },
+      {
+        "label": "Voiceover / min",
+        "price": "R500"
+      }
+    ],
+    "contact": {
+      "instagram": "@HAZYHAZY_SA",
+      "phone": "(072) 382-4977",
+      "email": "HAZYPTYLTD@GMAIL.COM"
+    },
+    "isNew": false
+  },
+  {
+    "id": 4,
+    "name": "Kgale",
+    "image": "images/Kgale.JPG",
+    "role": "Rapper / Singer / Guitarist",
+    "location": "East Rand, Johannesburg",
+    "genres": [
+      "Hip-Hop",
+      "RnB",
+      "Rap"
+    ],
+    "filters": [
+      "music"
+    ],
+    "minRate": 0,
+    "rateLabel": "POA",
+    "bio": "Born Mokgale Puwane (Sep 8 1996), the \"Rap-Guitarist of the East.\" His signature sound blends RnB & hip-hop with ghetto linguistics, delivered live on guitar. Founder of Kgalibarber — a platform for industry grooming and music.",
+    "highlights": [
+      "5 EPs + production & writing credits; 100K+ streams across platforms (55K+ Apple Music)",
+      "Radio: YFM, 5FM, VOW FM, Tuks FM, Welkom FM",
+      "MTV Base, Trace TV, Trace Africa video plays",
+      "Joburg Theatre, YFM Lyfe Fest, Rand Show, The Wav (Cape Town)",
+      "Worked with Fifi Cooper, Just Jabba, Seru, LaCabra, Lowfeye, The Qwellers, Blue Pappi"
+    ],
+    "notable": [
+      "Mona Lisa ft Sni Mhlongo — 11K+ streams; Trace TV / Trace Africa / MTV Base; 390+ Shazams",
+      "Coffee (prod. Twaggy)",
+      "Drippa Kakhulu ft Lowfeye"
+    ],
+    "rates": [
+      {
+        "label": "Performance / Feature",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "instagram": "@kgaldrogo",
+      "email": "puwanems@gmail.com"
+    },
+    "isNew": false
+  },
+  {
+    "id": 5,
+    "name": "LuMai",
+    "role": "Singer / Songwriter / Model / Actress",
+    "location": "South Africa",
+    "genres": [
+      "R&B",
+      "Afro-pop",
+      "Soul"
+    ],
+    "filters": [
+      "music",
+      "content"
+    ],
+    "minRate": 0,
+    "rateLabel": "POA",
+    "bio": "South African singer-songwriter, model and actress with a versatile creative presence across music and visual arts. Active on Apple Music and Deezer; known for collaborations across Afro-pop and R&B-adjacent sounds.",
+    "highlights": [
+      "Active on Apple Music and Deezer as solo artist",
+      "Featured vocalist on collaborative tracks across multiple genres",
+      "Multi-disciplinary creative: music, modelling, acting"
+    ],
+    "notable": [
+      "\"Lunatik\" (Da$H ft. Sastii & LuMai)"
+    ],
+    "rates": [
+      {
+        "label": "Music Feature / Performance / Modelling",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "instagram": "@lumai.rsa",
+      "email": "lumairsa2@gmail.com"
+    },
+    "isNew": true
+  },
+  {
+    "id": 6,
+    "name": "OhTeeh",
+    "role": "Artist / Producer / Musical Director / DJ",
+    "location": "South Africa",
+    "genres": [
+      "R&B",
+      "African Soul",
+      "Contemporary"
+    ],
+    "filters": [
+      "music",
+      "dj"
+    ],
+    "minRate": 0,
+    "rateLabel": "POA",
+    "bio": "Irresistibly charismatic artist whose voice slides effortlessly between smooth, soulful, and playful. Blends R&B warmth, African soul textures, and contemporary flair — known for bringing heart, humour, and heat to every stage. Artist, Music Producer, Musical Director, DJ and Teacher signed to Velocity Muzik.",
+    "highlights": [
+      "Signed to Velocity Muzik",
+      "Multi-role creative: artist, producer, musical director, DJ, teacher",
+      "Notable live presence and stage energy",
+      "Active on SoundCloud and Audiomack",
+      "Live flip: \"Please Mr\" (Shekhinah) — re-produced & re-arranged"
+    ],
+    "notable": [
+      "\"Please Mr\" Shekhinah Live FLIP (re-produced & re-arranged)"
+    ],
+    "rates": [
+      {
+        "label": "Performance / Booking / DJ Set",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "instagram": "@ohteeh",
+      "email": "ontlametse.putu@gmail.com"
+    },
+    "isNew": true
+  },
+  {
+    "id": 7,
+    "name": "Seru The Ellipsis",
+    "image": "images/Seru.JPG",
+    "role": "Artist / MC / Producer",
+    "location": "Vosloorus, East Rand",
+    "genres": [
+      "Hip-Hop",
+      "Rap",
+      "Neo-Soul"
+    ],
+    "filters": [
+      "music",
+      "mc"
+    ],
+    "minRate": 0,
+    "rateLabel": "POA",
+    "bio": "Born Serupenyana Pharoe. \"Ntwana ya Vosloorus, Monna wa Matatiele.\" Five mixtapes and debut album Leeto (100K+ streams in the first month). Explosive live presence; prolific wordsmith since age 8. Inspired by Khuli Chana, Nasty C and J. Cole.",
+    "highlights": [
+      "5 mixtapes (Dawn, Rise, Shine, Dusk, Set of Ellipsis) + debut album Leeto — 100K+ streams first month",
+      "Viral RedBull 64 Bars freestyle",
+      "Radio: 5FM, YFM, Metro FM, Lesedi FM, Umhlobo Wenene FM",
+      "Daily Thetha (SABC 1), Channel O; SA Hip Hop Mag, SlikourOnLife, Sportscene",
+      "Stage: Cassper, Blxckie, LucasRaps, Reason; Back to City Main Stage 2022; Red Bull B Con Cypher 2023 & 2024; Comic Con 2024"
+    ],
+    "notable": [
+      "Leeto (debut album)",
+      "Dawn / Rise / Shine / Dusk / Set of Ellipsis (5 mixtapes)",
+      "RedBull 64 Bars freestyle (viral)"
+    ],
+    "rates": [
+      {
+        "label": "Performance / Feature",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "instagram": "@serutheellipsis",
+      "email": "Serupharoe@gmail.com"
+    },
+    "isNew": false
+  },
+  {
+    "id": 8,
+    "name": "Shivolski",
+    "role": "Dancer / MC / Content Creator",
+    "location": "South Africa",
+    "genres": [
+      "Dance",
+      "Content Creation",
+      "MC"
+    ],
+    "filters": [
+      "mc",
+      "content"
+    ],
+    "minRate": 1000,
+    "rateLabel": "from R1,000",
+    "bio": "Dynamic dancer, MC and content creator known for sharp dance moves, hype hosting, and athlete & lifestyle content. Bridges live performance and social media influence across Instagram and TikTok with a growing international reach.",
+    "highlights": [
+      "Halls OMFCC Campaign",
+      "Global ComLimited Football Commercial",
+      "Active across Instagram & TikTok with international reach",
+      "Brand collaboration specialist — promotions, product reviews, live hosting"
+    ],
+    "notable": [
+      "Halls OMFCC Campaign",
+      "Global ComLimited Football Commercial"
+    ],
+    "rates": [
+      {
+        "label": "IG Sponsored Post",
+        "price": "R2,000"
+      },
+      {
+        "label": "IG Sponsored Reel",
+        "price": "R2,500"
+      },
+      {
+        "label": "TikTok Sponsored Video",
+        "price": "R2,500"
+      },
+      {
+        "label": "3x TikTok Videos",
+        "price": "R3,000"
+      },
+      {
+        "label": "IG Story",
+        "price": "R1,000"
+      },
+      {
+        "label": "Featuring in Video",
+        "price": "R1,000"
+      }
+    ],
+    "contact": {
+      "instagram": "@shivolski",
+      "phone": "+27 74 254 3027",
+      "email": "Sikhakhane8@gmail.com"
+    },
+    "isNew": false
+  },
+  {
+    "id": 9,
+    "name": "Zolelo",
+    "role": "Profile coming soon",
+    "location": "South Africa",
+    "genres": [],
+    "filters": [
+      "music"
+    ],
+    "minRate": 0,
+    "rateLabel": "POA",
+    "bio": "Profile coming soon — cohort member onboarding in progress.",
+    "highlights": [],
+    "notable": [],
+    "rates": [
+      {
+        "label": "Booking / Collaboration",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "email": "zolelo.mag@gmail.com"
+    },
+    "isNew": true
+  }
+]
