@@ -168,6 +168,7 @@
   {
     "id": 3,
     "name": "Hāzy",
+    "image": "images/Hazy01.JPG",
     "role": "Audio Engineer / Music Producer",
     "location": "South Africa",
     "genres": [
@@ -277,6 +278,7 @@
   {
     "id": 5,
     "name": "LuMai",
+    "image": "images/LuMai.JPG",
     "role": "Singer / Songwriter / Model / Actress",
     "location": "South Africa",
     "genres": [
@@ -314,6 +316,7 @@
   {
     "id": 6,
     "name": "OhTeeh",
+    "image": "images/Ohteeh.jpeg",
     "role": "Artist / Producer / Musical Director / DJ",
     "location": "South Africa",
     "genres": [
