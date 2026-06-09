@@ -1541,174 +1541,39 @@ body{
 
 <!-- ══════════ SCRIPTS ══════════ -->
 <script>
-/* ─── DATA ─────────────────────────────────────────── */
-const creatives = [
-  {
-    id:0, name:"LaCabra", role:"Hip-Hop Artist", location:"Johannesburg (from KZN)",
-    genres:["Hip-Hop","Rap","African Pop","RnB"],
-    filters:["music"],
-    minRate:0, rateLabel:"From POA",
-    bio:"Platinum-record selling South African artist from Phoenix, KZN. Co-founder of \"Qwellers\" alongside Lowfeye. Featured on Blxckie's \"Sunroof\". Holds 5 EPs and a fast-growing catalogue of hip-hop, rap, African pop and RnB.",
-    highlights:["Platinum-record selling artist","Co-founder of Qwellers with Lowfeye","Featured on Blxckie's 'Sunroof'","MTV Base & Trace Africa video airplay","Collaborative album uNoXhaka went viral"],
-    notable:["uNoXhaka (album w/ Lowfeye)","iQhawe Emphakathini (mixtape)","Khukhumele","Haibo!","Wherever We Go ft LucasRaps"],
-    rates:[{label:"Feature / Collab",price:"POA"},{label:"Live Performance",price:"POA"}],
-    contact:{instagram:"@lacabra_za"}, isNew:false
-  },
-  {
-    id:1, name:"Kallo", role:"Singer-Songwriter", location:"South Africa",
-    genres:["Soul","R&B","Afro Fusion"],
-    filters:["music"],
-    minRate:15000, rateLabel:"from R15,000",
-    bio:"Homegrown singer-songwriter from a musically inclined family. Idols SA 2017 golden ticket winner. Debut EP \"Love Over Everything\" (2021). Performs with a full 4-piece live band.",
-    highlights:["Idols SA 2017 — Golden Ticket","Debut EP 'Love Over Everything' (2021)","4-piece live band (piano, guitar, bass, drums)","50% deposit secures booking"],
-    notable:["Love Over Everything (EP, 2021)"],
-    rates:[{label:"Standard Set (1hr + 4-piece band)",price:"R15,000"},{label:"50% deposit",price:"R7,500"}],
-    contact:{}, isNew:false
-  },
-  {
-    id:2, name:"Kgaldrogo", role:"Rapper / Singer / Guitarist", location:"East Rand, Johannesburg",
-    genres:["Hip-Hop","RnB","Rap"],
-    filters:["music"],
-    minRate:0, rateLabel:"POA",
-    bio:"Born Mokgale Puwane (Sep 8 1996), the \"Rap-Guitarist of the East.\" His signature sound blends RnB & hip-hop with ghetto linguistics, delivered live on guitar. Founder of Kgalibarber — a platform for industry grooming and music.",
-    highlights:["5 EPs + production & writing credits","Radio: YFM, 5FM, VOW FM, Tuksfm","MTV Base, Trace TV, Trace Africa video plays","Joburg Theatre, YFM Lyfe Fest, Rand Show","Worked with Fifi Cooper, Just Jabba, Seru, LaCabra"],
-    notable:["Coffee (prod. Twaggy)","Drippa Kakhulu ft Lowfeye"],
-    rates:[{label:"Performance / Feature",price:"POA"}],
-    contact:{}, isNew:false
-  },
-  {
-    id:3, name:"Seru The Ellipsis", role:"Artist / MC / Producer", location:"Vosloorus, East Rand",
-    genres:["Hip-Hop","Rap","Neo-Soul"],
-    filters:["music"],
-    minRate:0, rateLabel:"POA",
-    bio:"Born Serupenyana Pharoe. \"Ntwana ya Vosloorus, Monna wa Matatiele.\" Three mixtapes, explosive live presence. Inspired by Khuli Chana, Nasty C and J. Cole. Prolific wordsmith since age 8.",
-    highlights:["3 mixtapes; acclaimed lyricism","Radio: 5FM, YFM, Metro FM, Lesedi FM","Daily Thetha (SABC 1), Channel O","SA Hip Hop Mag, SlikourOnLife, Sportscene","Stage: Cassper, Blxckie, LucasRaps, Reason"],
-    notable:["Dawn of Ellipsis","Shine of Ellipsis","Set of Ellipsis"],
-    rates:[{label:"Performance / Feature",price:"POA"}],
-    contact:{}, isNew:false
-  },
-  {
-    id:4, name:"Lula Odiba", role:"TV Presenter / Radio Host / DJ", location:"Johannesburg",
-    genres:["Media","Radio","Television","Content"],
-    filters:["mc","content"],
-    minRate:30000, rateLabel:"from R30,000",
-    bio:"Keletso Bonolo Modiba (LulaOdiba). Hosts The Lunch League on YFM (featured Gunna, Masego, KO, Mr Eazi). TV presenter, Groove on Channel O (Fridays). SA Radio Awards 2019 — Best Daytime Show.",
-    highlights:["SA Radio Awards 2019 — Best Daytime Show","YFM The Lunch League host","Groove presenter — Channel O (Fridays)","5FM internship alumna","Wits: Media Studies & Anthropology"],
-    notable:["The Lunch League (YFM)","Groove (Channel O)"],
-    rates:[{label:"Instagram Feed Post",price:"R30,000"},{label:"Hosting / Presenting",price:"POA"}],
-    contact:{instagram:"@lulaodiba"}, isNew:false
-  },
-  {
-    id:5, name:"OB WAN", role:"DJ", location:"Pretoria",
-    genres:["Afro Tech","House","Amapiano","Gqom"],
-    filters:["dj"],
-    minRate:7000, rateLabel:"from R7,000/hr",
-    bio:"Since 2019, Pretoria's specialist in the \"Four Pillars\" — Afro Tech, House, Amapiano, Gqom. From the Pretoria underground to Shanghai stages. Scientific precision meets raw energy.",
-    highlights:["International: Shanghai (Sunset House Vibes, Yanos Brunch)","Souk & Ayepyep Cape Town","Rocking the Daisies Cape Town","Tshwanefontein & Rockets Sundays Pretoria"],
-    notable:["International: Shanghai, China"],
-    rates:[{label:"Club Performance",price:"R7,000/hr"},{label:"Outdoor Performance",price:"R10,000/hr"},{label:"Private Function",price:"R10,000/hr"}],
-    contact:{phone:"+27 72 691 6350",email:"ObakengJR@gmail.com",instagram:"@Obakeng__JR"}, isNew:false
-  },
-  {
-    id:6, name:"Fifi Frequency", role:"MC / Broadcaster / Voice-over", location:"Johannesburg",
-    genres:["MC","Radio","Voice-over","Content"],
-    filters:["mc","content"],
-    minRate:1300, rateLabel:"from R1,300",
-    bio:"Refilwe Katong (Fifi Frequency) — female SA broadcaster, voice-over artist and established MC. YFM freelance presenter & digital content producer. Shared stages with Zakes Bantwini, Kamo Mphela, DJ Zintle.",
-    highlights:["YFM presenter & digital content producer","UJFM #TheUrbanBrunch (9AM–12PM weekdays)","#UJFMtop30 — Liberty Radio Award nomination","Hosted MusicEx 2024 & Mr & Miss UJ 2024","#ThePlaygroundOnY and #NightsLikeThis on YFM"],
-    notable:["The Urban Brunch (UJFM)","UJFMtop30"],
-    rates:[{label:"MCing (2hrs)",price:"R3,000"},{label:"Voice-over (60sec)",price:"R2,800"},{label:"Digital Content (3hrs)",price:"R1,300"}],
-    contact:{email:"feighkatong@gmail.com",phone:"0727098118",instagram:"@fifi_frequency"}, isNew:false
-  },
-  {
-    id:7, name:"K. Fresh", role:"Producer / Artist / Music Director", location:"Katlehong, Johannesburg",
-    genres:["Production","Afro Soul","Gospel Fusion","Hip-Hop"],
-    filters:["music"],
-    minRate:0, rateLabel:"POA",
-    bio:"Visionary multi-instrumentalist born 1998 in Katlehong. Keyboard at age 3, choir lead at 10, drums at 12, bass at 15. Toured with 2014 Clash of the Choirs SA winners in school uniform. Full-spectrum music director.",
-    highlights:["Multi-instrumentalist: keys, vocals, drums, bass","Toured with 2014 Clash of the Choirs SA winners","Founded creative collective 'Elements'","Production across SA hip-hop catalogue"],
-    notable:["Production credits across SA hip-hop"],
-    rates:[{label:"Production / Music Direction",price:"POA"}],
-    contact:{}, isNew:false
-  },
-  {
-    id:8, name:"Shivolski", role:"Dancer / MC / Content Creator", location:"South Africa",
-    genres:["Dance","Content Creation","MC"],
-    filters:["mc","content"],
-    minRate:1000, rateLabel:"from R1,000",
-    bio:"Dynamic dancer, MC and content creator with a strong brand presence across Instagram and TikTok. High-energy performances and engaging digital content bridging live entertainment and social media influence.",
-    highlights:["Active across Instagram & TikTok","Brand collaboration specialist","Dancer, MC and content creator"],
-    notable:["Brand collaborations across social platforms"],
-    rates:[{label:"IG Sponsored Post",price:"R2,000"},{label:"IG Sponsored Reel",price:"R2,500"},{label:"TikTok Sponsored Video",price:"R2,500"},{label:"3x TikTok Videos",price:"R3,000"},{label:"IG Story",price:"R1,000"},{label:"Featuring in Video",price:"R1,000"}],
-    contact:{instagram:"@shivolski"}, isNew:false
-  },
-  {
-    id:9, name:"Hazyhazy SA", role:"Audio Engineer / Music Producer", location:"South Africa",
-    genres:["Audio Engineering","Mixing","Mastering","Post Production"],
-    filters:["post-production"],
-    minRate:500, rateLabel:"from R500",
-    bio:"Professional audio engineer offering comprehensive post-production: recording, mixing and mastering across music, podcasts and voiceovers. Multi-booking discounts up to 40%. iTunes Master badge service available.",
-    highlights:["30% off 5+ demo recordings","40% off 5+ final mixes","iTunes Master badge service","Up to 4 revisions per mix & master","Non-refundable 50% deposit to book"],
-    notable:["Post-production: music, podcasts, voiceovers"],
-    rates:[{label:"Music Recording / demo",price:"R700"},{label:"Final Mix / demo",price:"R1,200"},{label:"Stereo Mastering / mix",price:"R600"},{label:"iTunes Master / mix",price:"R1,200"},{label:"Podcast Recording / 30min",price:"R1,200"},{label:"Voiceover / min",price:"R500"}],
-    contact:{email:"HAZYPTYLTD@GMAIL.COM",phone:"(072) 382-4977",instagram:"@HAZYHAZY_SA"}, isNew:false
-  },
-  {
-    id:10, name:"Spontaneous DJ", role:"DJ", location:"Johannesburg",
-    genres:["Hip-Hop","Amapiano","House","Open-Format"],
-    filters:["dj"],
-    minRate:0, rateLabel:"POA",
-    bio:"Shaun Ralefeta — \"The People's DJ.\" 10+ years, genre-fluid, instinctive crowd reader. Strong national presence across Johannesburg and beyond. Multi-genre: Hip-Hop, Amapiano, House, Open-Format.",
-    highlights:["10+ years active","Multi-genre: Hip-Hop, Amapiano, House","'The People's DJ'","Strong national and regional presence"],
-    notable:["Regular sets across Johannesburg"],
-    rates:[{label:"DJ Set",price:"POA"}],
-    contact:{}, isNew:false
-  },
-  {
-    id:11, name:"REBA", role:"Artist / Musician", location:"South Africa",
-    genres:["RnB","Soul","Alternative"],
-    filters:["music"],
-    minRate:0, rateLabel:"POA",
-    bio:"Experience the sound of love, intention, and atmosphere with REBA. An artist creating immersive sonic worlds built on emotional depth and intentional artistry.",
-    highlights:["Atmospheric, intention-driven sound","Soul and RnB influences"],
-    notable:["REBA SA EPK"],
-    rates:[{label:"Booking / Feature",price:"POA"}],
-    contact:{}, isNew:false
-  },
-  {
-    id:12, name:"Flagonstudios Photography", role:"Photography Studio", location:"South Africa",
-    genres:["Product Photography","Event Photography","Wedding","Editorial"],
-    filters:["photography"],
-    minRate:50, rateLabel:"from R50",
-    bio:"Full-service professional photography studio with comprehensive rates across all major categories — product, advertising, events, weddings, editorial, modelling and post-production retouching.",
-    highlights:["Full rate card across 6 photography categories","Per image, hourly, half-day, full-day packages","Product, advertising, branding, interiors, architectural","Event, wedding, editorial & modelling","Post-production retouching available"],
-    notable:["Product & advertising","Wedding photography","Editorial & modelling"],
-    rates:[{label:"Product / Advertising — per image",price:"R200 – R450"},{label:"Product / Advertising — full day",price:"R5,000 – R8,000"},{label:"Event Photography — per image",price:"R50 – R250"},{label:"Event Photography — full day",price:"R4,500 – R7,500"},{label:"Wedding — full day",price:"R7,000 – R12,000"},{label:"Editorial / Modelling — per image",price:"R600 – R3,200"}],
-    contact:{}, isNew:true
-  },
-  {
-    id:13, name:"Thapelo Masebe", role:"Photographer / Videographer / Creative Director", location:"Johannesburg",
-    genres:["Photography","Videography","Creative Direction","Content"],
-    filters:["photography","content"],
-    minRate:1800, rateLabel:"from R1,800",
-    bio:"Johannesburg-based transdisciplinary creative specializing in visual storytelling, photography, videography, editing and creative direction. Collaborative approach focused on intentional visual worlds and narrative-driven content.",
-    highlights:["Transdisciplinary: photo, video, creative direction","Visual Storytelling Package includes cinematic video","Monthly content retainers available","Commercial shoot capability (half/full day)","Photo editing from R80/image"],
-    notable:["Visual storytelling campaigns","Music video direction","Brand content creation"],
-    rates:[{label:"Visual Storytelling Package",price:"R7,500"},{label:"Creative Direction & Strategy",price:"R15,000"},{label:"Monthly Content Creation",price:"from R20,000"},{label:"Short-form Video Package",price:"R1,800"},{label:"3-Video Package",price:"R4,500"},{label:"5-Video Package",price:"R7,000"},{label:"Half Day Commercial Shoot",price:"R6,000"},{label:"Full Day Commercial Shoot",price:"R10,000"},{label:"Basic Edit",price:"R2,000"},{label:"Photo Editing Basic",price:"R80/image"}],
-    contact:{}, isNew:true
-  },
-  {
-    id:14, name:"DG-TAL Format", role:"Post Production Company", location:"South Africa",
-    genres:["Post Production","Motion Graphics","Graphic Design","2D/3D Animation","DIT"],
-    filters:["post-production","content"],
-    minRate:1000, rateLabel:"from R1,000",
-    bio:"One-stop creative hub for all post-production: DIT, Data Wrangling, Offline & Online Editing, Motion Graphics, Graphic Design and final delivery. Clients include Netflix, Showmax, MultiChoice, SABC, Standard Bank, UNICEF, Ballantine's. \"DG-TAL Format is Art.\"",
-    highlights:["Netflix SAFTA award: 'The Letter Reader' (2019)","Showmax: Love Lives Here, Baby Mamas 2, Mother The Law","MultiChoice: Korobela, Wangthembisa, Somathekisi","Daily Thetha (SABC, 2020–Present)","Tools: Adobe Suite, DaVinci Resolve, Blender, Cinema 4D, NukeX"],
-    notable:["The Letter Reader (Netflix/SAFTA)","Love Lives Here (Showmax)","Baby Mamas 2 (2024)","Wangthembisa (MultiChoice)","Daily Thetha (SABC 1, 2020–Present)"],
-    rates:[{label:"Long Format (offline, online, grade, subs, mix)",price:"from R35,000"},{label:"Short Format",price:"from R15,000"},{label:"Offline & Online Editing",price:"from R9,000"},{label:"GFX / Motion Graphics / Animation",price:"from R15,000"},{label:"Event Poster Design",price:"R1,000 – R2,500"},{label:"Logo Design",price:"R1,000 – R2,500"},{label:"DIT / Data Wrangling",price:"R3,000/day"},{label:"Film Poster Design",price:"POA"}],
-    contact:{email:"thandom.dgtal.format@gmail.com",phone:"+27 79 691 7213"}, isNew:true
+/* ─── CONFIG ───────────────────────────────────────── */
+/* Paste your Apps Script web-app URL here when ready. See Operations/03_Forms_Setup.md.
+   When empty, forms still validate but submissions only go to the browser console. */
+window.VA_CONFIG = {
+  FORM_ENDPOINT: '',  // e.g. 'https://script.google.com/macros/s/AKfycb.../exec'
+  CONTACT_FALLBACK: 'alextober5@gmail.com'  // shown if endpoint fails
+};
+
+/* ─── FORM → SHEET HELPER ──────────────────────────── */
+async function submitToSheet(payload){
+  const url = window.VA_CONFIG?.FORM_ENDPOINT;
+  if(!url){
+    console.warn('[verbAfrica] FORM_ENDPOINT not configured. Payload:', payload);
+    return { ok: false, reason: 'unconfigured' };
   }
-];
+  try {
+    /* Google Apps Script requires no-cors mode + text/plain to avoid a CORS preflight.
+       The response is opaque (we can't read it), so we trust the request reached the server. */
+    await fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+    return { ok: true };
+  } catch(e) {
+    console.error('[verbAfrica] Form submit failed:', e);
+    return { ok: false, reason: 'network', error: e };
+  }
+}
+
+/* ─── DATA ─────────────────────────────────────────── */
+let creatives = [];
 
 /* ─── STATE ────────────────────────────────────────── */
 let state = {
@@ -2128,12 +1993,42 @@ function addToCompareFromDetail(id){
   toggleCompare(id);
   showToast('Added to compare');
 }
-function sendEnquiry(id){
+async function sendEnquiry(id){
   const n = $('eq-name')?.value; const c = $('eq-contact')?.value; const m = $('eq-message')?.value;
   if(!n||!c||!m){ showToast('Please fill in all fields'); return; }
   const creative = creatives.find(x=>x.id===id);
-  showToast(`Enquiry sent to ${creative.name}! 🎉`, 'success');
-  $('enquirySection').style.display='none';
+  if(!creative){ showToast('Something went wrong — please refresh'); return; }
+
+  /* Disable the button while we submit so users don't double-click. */
+  const btn = document.querySelector('#enquirySection .form-submit');
+  const originalText = btn?.textContent;
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+
+  const result = await submitToSheet({
+    type: 'enquiry',
+    creativeId: id,
+    creativeName: creative.name,
+    creativeRole: creative.role,
+    clientName: n,
+    clientContact: c,
+    message: m,
+    sourceUrl: window.location.href,
+    submittedAt: new Date().toISOString()
+  });
+
+  if(btn){ btn.disabled = false; btn.textContent = originalText || 'Send Enquiry'; }
+
+  if(result.ok){
+    showToast(`Enquiry sent to ${creative.name}! 🎉`, 'success');
+    $('enquirySection').style.display='none';
+    /* Clear the form for the next use. */
+    ['eq-name','eq-contact','eq-message'].forEach(id => { const el = $(id); if(el) el.value = ''; });
+  } else if(result.reason === 'unconfigured'){
+    /* Forms not yet wired — fall back to telling the user to email directly. */
+    showToast(`Form not yet live — please email ${window.VA_CONFIG.CONTACT_FALLBACK}`);
+  } else {
+    showToast(`Couldn't send — please email ${window.VA_CONFIG.CONTACT_FALLBACK}`);
+  }
 }
 function closeDetail(e){ if(e.target===$('detailOverlay')) closeDetailDirect(); }
 function closeDetailDirect(){ $('detailOverlay').classList.remove('open'); document.body.style.overflow=''; }
@@ -2179,15 +2074,45 @@ function matchBrief(){
     </div>
   `).join('');
 }
-function submitBrief(){
+async function submitBrief(){
   const type = $('briefType').value;
   const desc = $('briefDesc').value;
   const name = $('briefName').value;
   const contact = $('briefContact').value;
   if(!type){ showToast('Please select a project type'); return; }
   if(!name||!contact){ showToast('Please add your name and contact'); return; }
+
+  /* Show matches immediately — submission to the sheet runs in parallel. */
   matchBrief();
-  showToast('Brief submitted! Matched creatives shown below 🎯', 'success');
+  const matchedNames = (Array.from(document.querySelectorAll('#briefMatchList .brief-match-name')) || [])
+    .map(el => el.textContent).join(', ');
+
+  const btn = document.querySelector('.brief-submit');
+  const originalText = btn?.textContent;
+  if(btn){ btn.disabled = true; btn.textContent = 'Submitting…'; }
+
+  const result = await submitToSheet({
+    type: 'brief',
+    projectType: type,
+    description: desc,
+    budget: state.selectedBudget || '',
+    suggestedMatches: matchedNames,
+    clientName: name,
+    clientContact: contact,
+    sourceUrl: window.location.href,
+    submittedAt: new Date().toISOString()
+  });
+
+  if(btn){ btn.disabled = false; btn.textContent = originalText || 'Find Matched Creatives →'; }
+
+  if(result.ok){
+    showToast('Brief submitted! Matched creatives shown below 🎯', 'success');
+  } else if(result.reason === 'unconfigured'){
+    showToast(`Form not yet live — please email ${window.VA_CONFIG.CONTACT_FALLBACK}`);
+  } else {
+    showToast(`Couldn't send — please email ${window.VA_CONFIG.CONTACT_FALLBACK}`);
+  }
+
   $('briefMatches')?.scrollIntoView({behavior:'smooth'});
 }
 
@@ -2474,9 +2399,18 @@ function cpRenderSelectGrid() {
 
 
 /* ─── INIT ────────────────────────────────────────────── */
-updateShortlistNav();
-cpRenderSelectGrid();
-showPage('landing');
+fetch('data/creatives.json')
+  .then(r => r.json())
+  .then(data => {
+    creatives = data;
+    updateShortlistNav();
+    cpRenderSelectGrid();
+    showPage('landing');
+  })
+  .catch(e => {
+    console.error('Failed to load creatives:', e);
+    showToast('Could not load creative data');
+  });
 </script>
 </body>
 </html>
