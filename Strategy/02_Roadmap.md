@@ -191,6 +191,7 @@ Append-only. Date format YYYY-MM-DD.
 - **2026-06-09** — **We stay involved through gig-day** during the beta (do not hand off to creative ↔ client). *Reason: deliberate learning mode — see operations end-to-end so we know where to productise later.*
 - **2026-06-09** — **Broader talent network** acknowledged as operational reserve (off-platform, used when cohort can't fulfill). The cohort of 10 remains the publicly-displayed product. *Reason: present completed packages without compromising curation.*
 - **2026-06-09** — **Decline handling default: solve behind the scenes** (swap from cohort or broader pool, present completed package). *Reason: client-experience-first default; capture preference via feedback forms.*
+- **2026-06-09** — **Form → Sheet plumbing live.** Google Apps Script web app receives enquiry + brief submissions, appends to `Bookings` sheet, sends email to `alextober5@gmail.com`. Verified end-to-end. *Reason: enquiries now actually reach Alexander — Phase 3 unblocked.*
 
 ---
 

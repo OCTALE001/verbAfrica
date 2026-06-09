@@ -1549,7 +1549,7 @@ body{
 /* Paste your Apps Script web-app URL here when ready. See Operations/03_Forms_Setup.md.
    When empty, forms still validate but submissions only go to the browser console. */
 window.VA_CONFIG = {
-  FORM_ENDPOINT: '',  // e.g. 'https://script.google.com/macros/s/AKfycb.../exec'
+  FORM_ENDPOINT: 'https://script.google.com/macros/s/AKfycbws9xMYc2Vcf01VVSlEkp4ZCtJ3xnZ08AaxOnk-OSVNqX03VAUJwHiQPVO3950avmvwYg/exec',
   CONTACT_FALLBACK: 'alextober5@gmail.com'  // shown if endpoint fails
 };
 
@@ -1893,15 +1893,17 @@ function showProfile(id){
       <div class="section-label">Notable Work</div>
       <ul class="highlights">${c.notable.map(n=>`<li>${n}</li>`).join('')}</ul>
     </div>` : '';
+  /* PUBLIC contact display only shows Instagram (which is already public on IG).
+     Phone + email are HIDDEN here — kept in data/creatives.json for internal use.
+     All booking-related contact routes through the Send Enquiry form (→ Alexander). */
   const contactPills = [];
-  if(c.contact.email) contactPills.push(`<div class="contact-pill">✉️ ${c.contact.email}</div>`);
-  if(c.contact.phone) contactPills.push(`<div class="contact-pill">📞 ${c.contact.phone}</div>`);
   if(c.contact.instagram) contactPills.push(`<div class="contact-pill">📸 ${c.contact.instagram}</div>`);
-  const contactHtml = contactPills.length ? `
+  contactPills.push(`<a href="#" onclick="event.preventDefault();openEnquiry(${c.id})" class="contact-pill" style="text-decoration:none;cursor:pointer;background:rgba(124,58,237,0.15);border-color:var(--purple);color:#fff">💬 Contact via verbAfrica</a>`);
+  const contactHtml = `
     <div class="detail-section">
       <div class="section-label">Contact</div>
       <div class="contact-row">${contactPills.join('')}</div>
-    </div>` : '';
+    </div>`;
 
   $('detailCard').innerHTML = `
     <button class="close-btn" onclick="closeDetailDirect()">✕</button>

@@ -4,6 +4,30 @@
 
 ---
 
+## 2026-06-09 — Forms are alive
+
+End-to-end verified: a real submission on the platform → row in the `Bookings` sheet → email notification to me. Took longer than expected to debug — the wrinkle was a quiet one. When you Deploy in Google Apps Script, it **snapshots** the script as a versioned copy. Every edit after that lives in the editor but doesn't run when the web app URL is called. The deployment was running an early version with the placeholder `SHEET_ID`, silently failing in the catch block, and returning "Completed" with no logs. We chased our tail for a while before the redeploy fixed it.
+
+Lesson worth keeping: **with Apps Script web apps, "deployed" ≠ "current."** Every meaningful script change needs Deploy → Manage deployments → New version. The URL stays the same; only the version behind it changes.
+
+Phase 2's hardest dependency is now cleared — clients can actually reach me. The remaining Phase 2 work (direct WhatsApp/email shortcuts on creative cards) is cosmetic in comparison.
+
+---
+
+## 2026-06-09 — Figma prototype: 5 frames created, blocked by rate limit
+
+Started building a clickable Figma prototype in the verbAfrica Figma file (`rpD0GbZn1P9meCWlecWeTX`). Using the Figma MCP plugin and `use_figma` tool.
+
+**Completed:**
+- 5 screen frames created at 1440×900, laid out left-to-right: 01 · Landing, 02 · Browse, 03 · Profile Detail, 04 · Post a Brief, 05 · Creative Portal
+- Each frame has a full nav bar: amber verbAfrica logo, Browse / Post a Brief / I'm a Creative links, CTA button
+
+**Blocked:** Figma MCP Starter plan rate limit hit on the call to build the Landing page content. Requires Figma plan upgrade to continue.
+
+**Remaining work:** Landing hero + search + category chips + featured cards, Browse grid, Profile Detail modal, Post a Brief modal, Creative Portal selector screen, and prototype interaction wiring between all screens.
+
+---
+
 ## 2026-06-09 — Repo sync: docs brought in line with recent work
 
 Ran a pass across the whole repo to align documentation with where the project actually is. A few things were out of date from the June 5 foundation session and had never been updated to reflect the June 9 cohort work.
