@@ -194,3 +194,4 @@ If you ever need a new URL (security, account change): just re-do steps 6–8. S
 ## Change Log
 
 - **2026-06-09** — Initial setup guide.
+- **2026-06-09** — **Setup complete.** Web app deployed; verified end-to-end with smoke tests; URL embedded in `index.html` `VA_CONFIG.FORM_ENDPOINT`. Cohort feedback form also created via `createCohortFeedbackForm()` and linked from site footer.

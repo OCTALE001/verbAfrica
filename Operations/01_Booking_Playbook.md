@@ -29,9 +29,15 @@ The cohort *is the product*. The broader pool is *operational reserve* — invis
 
 ## Source of Truth
 
-**The booking tracking sheet** (Google Sheets — to be set up when we wire the forms).
+**The booking tracking sheet** — *verbAfrica Bookings* (Google Sheets, owned by `alextober5@gmail.com`). **Live as of 2026-06-09.**
 
-Every enquiry, brief, and booking lives in the sheet from first contact to completion. **Notification channels** (email, WhatsApp, future inbox) are *alarm bells* — swappable, additive, removable. The sheet is the ledger.
+Every enquiry, brief, and booking lives in the sheet from first contact to completion. **Notification channels** (currently email; WhatsApp / future inbox optional later) are *alarm bells* — swappable, additive, removable. The sheet is the ledger.
+
+The form → sheet plumbing runs on a Google Apps Script web app attached to the sheet. Setup documented in [`03_Forms_Setup.md`](03_Forms_Setup.md). The Apps Script URL is embedded in `index.html` (`VA_CONFIG.FORM_ENDPOINT`).
+
+**Sheet tabs:**
+- `Bookings` — every enquiry + brief submission lands here as a row.
+- `Form Responses 1` (or similar) — cohort feedback form responses (auto-created by the form when first response arrives).
 
 ---
 

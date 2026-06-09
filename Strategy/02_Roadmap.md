@@ -1,6 +1,6 @@
 # Roadmap
 
-*Last updated: 2026-06-09 — Phase status updated; cohort loaded locally.*
+*Last updated: 2026-06-09 — Phase 2 complete; cohort beta testing in progress.*
 
 *Aim: get every cohort member to the **December 2026 testimonial** described in [01_Vision.md §4](01_Vision.md).*
 
@@ -20,9 +20,21 @@ Read alongside `01_Vision.md`. **The Vision is the *where*. The Roadmap is the *
 
 ## Current Phase
 
-**Phase 1 — Cohort Onboarding** *(started June 2026, in progress)*
+**Between Phase 2 and Phase 3 — Cohort beta testing** *(started 2026-06-09)*
 
-All 10 cohort profiles are loaded into `data/creatives.json` and visible locally. Internal Cohort files exist; B-sections (why in cohort, contact prefs, tech interventions) are blank — to fill through ongoing conversations. Brand guides and business docs are the remaining Phase 1 work.
+Phases 0, 1, and 2 are complete. The platform is public, the booking infrastructure is live, and the cohort has the site + feedback form. We are now collecting UX feedback from the cohort as testers (not yet running real bookings with real clients).
+
+**Live URLs:**
+- Public site: https://octale001.github.io/verbAfrica/
+- Cohort feedback form: https://docs.google.com/forms/d/e/1FAIpQLSfZ04vwUHNWAFdf5Z7u46lSbafc1iv-mqJ-BD_pnK7fV7fS2A/viewform
+- Booking tracker: *verbAfrica Bookings* (Google Sheet, private)
+
+**What we're watching for:**
+- Cohort feedback form responses
+- Any actual enquiries that come in via the site's enquiry / brief forms
+- Operational questions about the playbook we hadn't anticipated
+
+**Phase 3 (Trial Client Pilot) opens when** the cohort has tested, blocking feedback is addressed, and Alexander invites the first real clients.
 
 ---
 
@@ -66,23 +78,25 @@ Get the 10 cohort members loaded onto the platform with the right data, and star
 ---
 
 ### Phase 2 — Booking Infrastructure
-**Status:** Not started.
+**Status:** ✅ Complete (2026-06-09).
 **Vision strands served:** Bookings work.
 
-Make the platform actually capable of handling bookings, with you as the manual operator behind the scenes.
+Make the platform actually capable of handling bookings, with Alexander as the manual operator behind the scenes.
 
 **Work:**
-- Wire enquiry + brief forms to capture submissions (email + spreadsheet).
-- Add WhatsApp / email shortcut for direct creative contact.
-- Write `Operations/01_Booking_Playbook.md` — exactly how a booking flows from enquiry to confirmed.
-- Set up booking tracking spreadsheet.
-- Write `Operations/02_Response_Standards.md` — your promises (response times, etc.).
+- ✅ Wire enquiry + brief forms to capture submissions (Google Sheet via Apps Script + email notification).
+- ✅ Add "Contact via verbAfrica" shortcut on profiles → routes through the enquiry form (kept Alexander as the gatekeeper during beta; no direct creative ↔ client contact yet, by design).
+- ✅ Write [`Operations/01_Booking_Playbook.md`](../Operations/01_Booking_Playbook.md) — 9-stage booking lifecycle.
+- ✅ Set up booking tracking spreadsheet (*verbAfrica Bookings*).
+- ✅ Write [`Operations/02_Response_Standards.md`](../Operations/02_Response_Standards.md) — internal targets.
+- ✅ Privacy: hide cohort phone/email on public profiles.
 
-**What we're measuring:**
-- All test enquiries reach you within seconds.
-- A test booking can be tracked from enquiry → confirmed → completed.
+**Measured / achieved:**
+- Test enquiry reaches the sheet + email within ~2 seconds of submission.
+- Booking row tracks from enquiry → confirmed → completed via Status column.
+- Setup documented in [`Operations/03_Forms_Setup.md`](../Operations/03_Forms_Setup.md).
 
-**Done when:** Forms route correctly; tracking works; playbook holds up against a dry-run booking.
+**Done when:** Forms route correctly; tracking works; playbook holds up against a dry-run booking. ✅
 
 ---
 
@@ -192,6 +206,9 @@ Append-only. Date format YYYY-MM-DD.
 - **2026-06-09** — **Broader talent network** acknowledged as operational reserve (off-platform, used when cohort can't fulfill). The cohort of 10 remains the publicly-displayed product. *Reason: present completed packages without compromising curation.*
 - **2026-06-09** — **Decline handling default: solve behind the scenes** (swap from cohort or broader pool, present completed package). *Reason: client-experience-first default; capture preference via feedback forms.*
 - **2026-06-09** — **Form → Sheet plumbing live.** Google Apps Script web app receives enquiry + brief submissions, appends to `Bookings` sheet, sends email to `alextober5@gmail.com`. Verified end-to-end. *Reason: enquiries now actually reach Alexander — Phase 3 unblocked.*
+- **2026-06-09** — **Public site deployed to https://octale001.github.io/verbAfrica/** with cohort + working forms + privacy patch (cohort phone/email hidden from public profiles). *Reason: cohort can now test the site as themselves before clients see it.*
+- **2026-06-09** — **Cohort feedback form created** via auto-generation Apps Script function. Form linked from site footer ("💬 Send feedback →") and shareable via direct link. Responses auto-land in the *verbAfrica Bookings* sheet. *Reason: structured UX feedback from cohort testers before Phase 3 trial clients arrive.*
+- **2026-06-09** — **Phase 2 complete; in cohort-beta testing.** Holding before Phase 3 trial clients to digest feedback. *Reason: don't put real clients in front of something the cohort itself hasn't blessed.*
 
 ---
 
