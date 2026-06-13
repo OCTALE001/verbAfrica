@@ -4,6 +4,45 @@
 
 ---
 
+## 2026-06-11 — Figma 1:1 rebuild: two screens done, rate limit again
+
+The Canva prototype looked nothing like the site — generative tools improvise; they don't copy. So back to Figma (file `rpD0GbZn1P9meCWlecWeTX`) for a true 1:1 rebuild from `index.html` itself: real CSS tokens, real copy, real cohort data.
+
+**Done before the wall:**
+- **01 · Landing** — pixel-faithful: gold full-bleed, "Connect. Create. Collaborate.", both Client/Creative cards with the ✓ lists and CTAs.
+- **02 · Browse** — the whole page at full height (2007px): nav with active-state Browse pill, gold search hero, 5 category cards, 7 filter chips, all **10 listing cards with the real cohort photos**, ratings/locations/POA badges computed with the site's own formulas, footer with the feedback link.
+
+**Two lessons:**
+1. `figma.createImageAsync` isn't supported in the MCP environment — photos go in via the `upload_assets` tool + a curl POST per image. The local `images/` folder made this painless.
+2. The Starter plan rate limit struck mid-build again (~12 calls in). It reset between June 9 and 11, so it behaves like a daily quota despite docs saying 6/month. **Remaining:** Profile Detail modal (Fifi), Post a Brief form, Creative Portal selector — the build scripts are written and the photo workflow proven, so next session is execution only.
+
+Handed the remainder to a scheduled cloud agent (`verbafrica-figma-build-resume`, one-time run 2026-06-12 09:00 SAST) carrying the full build spec, the rate-limit budget, and the photo-upload workflow. First experiment with an overnight hand-off — if it works, "leave it with Claude" becomes a real pattern.
+
+---
+
+## 2026-06-11 — Canva prototype + a gap audit of the repo
+
+Two threads today.
+
+**Canva prototype.** After the Figma attempt hit a rate limit on June 9, we tried the other route: Canva generated an 8-page presentation walking through the web app's key screens — landing ("Connect. Create. Collaborate."), browse directory, profile detail, post-a-brief, how-it-works, creative portal — using the live site's actual copy and the gold #C8860A branding. Saved as "Presentation - verbAfrica" in the verbAfrica Canva folder, shareable as a design option without sending anyone to the live site. Three alternative generated versions are parked as candidates if the first read isn't right.
+
+**Gap audit.** Asked "what's missing from this folder?" and the honest answer is: the repo documents *product and operations* well, but three things live nowhere — brand assets (the logo/colours exist only inside `index.html` and in Canva), cohort consent records (their photos and rates are public; nothing on paper says they agreed), and a place to collect beta feedback as it arrives (the form feeds a sheet, but synthesis has no home). None block beta; consent is the one with real-world weight.
+
+First real enquiry sent through the live site — and it vanished. No email, no row in the sheet. The browser had shown "Enquiry sent! 🎉".
+
+Root cause, found by testing the endpoint from the terminal (where you can actually read the server's response, unlike the browser's `no-cors` blindness): the live deployment was **still running Version 1 of the Apps Script** — the one with the placeholder `PASTE_YOUR_SHEET_ID_HERE`. The redeploy during the June 9 debugging never actually took. Every submission since had been executing, erroring on the placeholder, and silently returning a failure nobody could see.
+
+Two lessons, both earned twice now:
+
+1. **Apps Script: edit → save → Deploy → Manage deployments → New version.** Without the "New version" step, the Deploy button re-saves the old snapshot and the live URL keeps running stale code. This is the second time the same gotcha got us. Now it's a rule, written in `Operations/03_Forms_Setup.md` and in memory.
+2. **"Verified" means reading the server's answer, not trusting the client's toast.** The browser shows success because `no-cors` hides everything. The terminal test (`curl` the POST, follow the redirect, read the JSON) is the only honest check. From now on, every endpoint change gets verified that way before we call it done — `{"ok":true,"row":N}` or it didn't happen.
+
+Also worth noting: the failure mode was *graceful from the visitor's side* — they saw success, no broken page. Bad for us (lost enquiry), invisible to them. That trade-off is worth rethinking post-beta: maybe the form should only claim success when it can prove delivery.
+
+Fixed, redeployed, verified with a real server response. Also added a second notification email to the alert chain.
+
+---
+
 ## 2026-06-09 — Beta testing kicks off: cohort first
 
 Pushed Phase 2 to the public site and sent it to the cohort to test as themselves. Two firsts in one go:
@@ -185,3 +224,13 @@ Decided to keep this storyline as a separate `Journey/` folder — not part of t
 ### What's next
 
 Phase 1 — Cohort Onboarding. I send Claude the 10 cohort members' details, the data moves into `data/creatives.json`, and we get all 10 profiles up on the local platform. Then operations.
+
+---
+
+## June 13, 2026 — Photo crops fixed
+
+Noticed the cohort photos were cropping badly on the cards — Chef Nqobi's head cut off, a few others drifting out of frame. The cause: every photo defaulted to `background-position: center`, but most of these are portraits with faces in the upper third, so "center" sliced straight through foreheads.
+
+The site already had a per-creative `imagePos` hook (Zolelo was using `center top`), so the fix was data, not code. Looked at all nine photos and set each one's position by where the face actually sits — `center top` for the high-framed shots (Chef, Zolelo), `center 25%`–`35%` for the rest. DG-TAL and Shivolski have no photo yet, so they stay on initials.
+
+Lesson worth keeping: when a layout knob already exists in the data layer, reach for that before touching CSS.

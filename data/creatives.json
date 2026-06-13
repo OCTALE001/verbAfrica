@@ -3,6 +3,7 @@
     "id": 0,
     "name": "Chef Nqobi",
     "image": "images/Chef_Nqobi.JPG",
+    "imagePos": "center top",
     "role": "Culinary Artist / Food Filmmaker / Content Creator",
     "location": "Johannesburg",
     "genres": [
@@ -118,6 +119,7 @@
     "id": 2,
     "name": "Fifi Frequency",
     "image": "images/Fifi01.JPG",
+    "imagePos": "center 25%",
     "role": "MC / Broadcaster / Voice-over Artist",
     "location": "Johannesburg",
     "genres": [
@@ -169,6 +171,7 @@
     "id": 3,
     "name": "Hāzy",
     "image": "images/Hazy01.JPG",
+    "imagePos": "center 25%",
     "role": "Audio Engineer / Music Producer",
     "location": "South Africa",
     "genres": [
@@ -238,6 +241,7 @@
     "id": 4,
     "name": "Kgale",
     "image": "images/Kgale.JPG",
+    "imagePos": "center 35%",
     "role": "Rapper / Singer / Guitarist",
     "location": "East Rand, Johannesburg",
     "genres": [
@@ -279,6 +283,7 @@
     "id": 5,
     "name": "LuMai",
     "image": "images/LuMai.JPG",
+    "imagePos": "center 25%",
     "role": "Singer / Songwriter / Model / Actress",
     "location": "South Africa",
     "genres": [
@@ -317,6 +322,7 @@
     "id": 6,
     "name": "OhTeeh",
     "image": "images/Ohteeh.jpeg",
+    "imagePos": "center 28%",
     "role": "Artist / Producer / Musical Director / DJ",
     "location": "South Africa",
     "genres": [
@@ -357,6 +363,7 @@
     "id": 7,
     "name": "Seru The Ellipsis",
     "image": "images/Seru.JPG",
+    "imagePos": "center 35%",
     "role": "Artist / MC / Producer",
     "location": "Vosloorus, East Rand",
     "genres": [
@@ -521,6 +528,7 @@
     "id": 10,
     "name": "Just Jabba",
     "image": "images/11-just-jabba.jpg",
+    "imagePos": "center 28%",
     "role": "Rapper / Recording Artist / Wordsmith",
     "location": "Johannesburg (East Rand)",
     "genres": [
