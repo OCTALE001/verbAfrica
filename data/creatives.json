@@ -457,26 +457,109 @@
   },
   {
     "id": 9,
-    "name": "Zolelo",
-    "role": "Profile coming soon",
-    "location": "South Africa",
-    "genres": [],
+    "name": "Zolelo Magwaza",
+    "image": "images/04-zolelo.jpg",
+    "imagePos": "center top",
+    "role": "Videographer / Photographer / Filmmaker / Content Creator",
+    "location": "Johannesburg",
+    "genres": [
+      "Video Production",
+      "Stills Photography",
+      "Graphics & VFX",
+      "Social Media"
+    ],
+    "filters": [
+      "photography",
+      "post-production",
+      "content"
+    ],
+    "minRate": 0,
+    "rateLabel": "POA",
+    "bio": "Zolelo Magwaza — \"Your Most Valuable Digital Asset\" (iiam3siixtii). Visual storyteller of Zulu and Tsonga heritage, born in Durban and matured in Johannesburg. Full-spectrum creative across video production, photography, animation and graphic design, working with digital agencies and production houses. Studied Engineering in The Built Environment; his true architecture is visual — framed by light, movement and the intimacy of a captured moment.",
+    "highlights": [
+      "750+ projects completed, 5,000+ digital assets created, 360+ satisfied clients",
+      "Soweto Blaze (Netflix) and NBA Life Season 2 (TV talk show)",
+      "Brand SA — 30 Years of Democracy campaign",
+      "SANRAL TV commercial (road safety)",
+      "Content & collaborations: Play Braam, Banter w Boys, Kent Gush Properties"
+    ],
+    "notable": [
+      "Showreel: https://youtu.be/LgcaKO-OBIU",
+      "Soweto Blaze (Netflix)",
+      "NBA Life Season 2",
+      "Brand SA: 30 Years of Democracy",
+      "SANRAL TV Commercial"
+    ],
+    "rates": [
+      {
+        "label": "Video Production",
+        "price": "POA"
+      },
+      {
+        "label": "Stills Photography",
+        "price": "POA"
+      },
+      {
+        "label": "Graphics & VFX / Animation",
+        "price": "POA"
+      },
+      {
+        "label": "Social Media Content",
+        "price": "POA"
+      }
+    ],
+    "contact": {
+      "instagram": "@iiam3siixtii",
+      "youtube": "@iiam3siixtii",
+      "linkedin": "zolelo-magwaza-438357156",
+      "email": "zolelo.mag@gmail.com",
+      "portfolio": "https://niaoff-schuorst-raoks.yolasite.com"
+    },
+    "isNew": true
+  },
+  {
+    "id": 10,
+    "name": "Just Jabba",
+    "image": "images/11-just-jabba.jpg",
+    "role": "Rapper / Recording Artist / Wordsmith",
+    "location": "Johannesburg (East Rand)",
+    "genres": [
+      "Hip-Hop",
+      "Kwaito",
+      "Jazz"
+    ],
     "filters": [
       "music"
     ],
     "minRate": 0,
     "rateLabel": "POA",
-    "bio": "Profile coming soon — cohort member onboarding in progress.",
-    "highlights": [],
-    "notable": [],
+    "bio": "Njabulo Mpanza, aka Just Jabba — a Johannesburg-born recording artist with seven years building one of South Africa's most distinctive voices, at the intersection of hip-hop, Kwaito and jazz. \"Township-raised. World-trained. Untranslatable.\" Holds a BA Honours in Political Studies (Wits) and a BSocSci in International Relations (UCT), speaks six languages, and has represented South Africa at governance forums in Bangkok, Istanbul, Dubai and New York.",
+    "highlights": [
+      "150K+ streams as Just Jabba; 130K+ as duo Bougie Pantsula (with Matt Ryan)",
+      "Apple Music editorial: A-List South Africa, Mzansi Hits, Mzansi Hip-Hop, Best of the Week",
+      "Press: Mail & Guardian, Zkhiphani, Icekream Magazine, Slikour on Life",
+      "Brand partnerships: Markham and Red Bull Music",
+      "Six languages (isiZulu, English, isiXhosa, Ndebele, Sesotho, Setswana) — Fluent multilingual series"
+    ],
+    "notable": [
+      "Suitcase Yama Hit (latest project — Apple Music editorial)",
+      "96 – Infinity (EP, jazz-inflected)",
+      "Not Too Bad for a Pantsula (EP)",
+      "Look Up (debut EP)",
+      "Bougie Pantsula Demo Tape (duo EP with Matt Ryan)"
+    ],
     "rates": [
       {
-        "label": "Booking / Collaboration",
+        "label": "Performance / Booking / Feature",
         "price": "POA"
       }
     ],
     "contact": {
-      "email": "zolelo.mag@gmail.com"
+      "instagram": "@justjabba_",
+      "tiktok": "@justjabba_",
+      "youtube": "@justjabba",
+      "spotify": "Just Jabba",
+      "email": "hello@justjabba.com"
     },
     "isNew": true
   }

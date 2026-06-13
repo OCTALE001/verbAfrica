@@ -32,7 +32,7 @@
 }
 .detail-avatar,.shortlist-item-avatar,.compare-slot-avatar,.compare-col-avatar,
 .brief-match-avatar,.cp-sel-avatar,.cp-welcome-avatar,.cp-epk-avatar-lg{
-  background-size:cover;background-position:center top;
+  background-size:cover;background-position:center;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -1597,7 +1597,7 @@ let state = {
 /* ─── HELPERS ───────────────────────────────────────── */
 const $ = id => document.getElementById(id);
 function initials(n){ return n.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase(); }
-function avatarBg(c){ return c.image ? `style="background-image:url('${c.image}')"` : ''; }
+function avatarBg(c){ return c.image ? `style="background-image:url('${c.image}');background-position:${c.imagePos||'center'}"` : ''; }
 function avatarText(c){ return c.image ? '' : initials(c.name); }
 function showToast(msg, type=''){
   const t = $('toast'); t.textContent = msg; t.className = 'toast show'+(type?' '+type:'');
@@ -1723,7 +1723,7 @@ function renderGrid(){
     const photo   = getPhoto(c);
     return `
     <div class="listing-card${inCompare?' in-compare':''}" id="card-${c.id}" onclick="showProfile(${c.id})">
-      <div class="listing-photo" style="background-image:url('${photo}')">
+      <div class="listing-photo" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
         <div class="listing-photo-overlay">
           ${c.isNew?`<span class="listing-badge new-badge">New</span>`:''}
           <span class="listing-badge available">Available</span>
@@ -2206,7 +2206,7 @@ function cpRenderProfile(c) {
   const reviews = fakeReviews(c.id);
   $('cpListingPreview').innerHTML = `
     <div class="listing-card" style="max-width:320px;cursor:default;">
-      <div class="listing-photo" style="background-image:url('${photo}')">
+      <div class="listing-photo" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
         <div class="listing-photo-overlay">
           ${c.isNew ? '<span class="listing-badge new-badge">New</span>' : ''}
           <span class="listing-badge available">Available</span>
@@ -2415,7 +2415,7 @@ function cpRenderSelectGrid() {
 
 
 /* ─── INIT ────────────────────────────────────────────── */
-fetch('data/creatives.json')
+fetch('data/creatives.json?v=' + Date.now(), { cache: 'no-store' })
   .then(r => r.json())
   .then(data => {
     creatives = data;

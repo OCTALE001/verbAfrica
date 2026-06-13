@@ -2,7 +2,7 @@
 
 ## What It Is
 
-Curated booking platform for South African creatives. Connects clients (brands, SMBs, event companies, individuals) with a vetted cohort of 10 creatives in Johannesburg. Not an open marketplace — the cohort is the product.
+Curated booking platform for South African creatives. Connects clients (brands, SMBs, event companies, individuals) with a vetted cohort of 11 creatives in Johannesburg. Not an open marketplace — the cohort is the product.
 
 verbAfrica is product #1 of a broader creative-industry tech-enablement studio founded by Alexander October.
 
@@ -10,25 +10,26 @@ verbAfrica is product #1 of a broader creative-industry tech-enablement studio f
 
 - Single-page HTML app (`index.html`) — no framework, no build step
 - Creative data lives in `data/creatives.json` (fetched at runtime; not hardcoded in JS)
-- 10 cohort members loaded onto the platform locally
-- Forms (enquiry, brief) not yet wired — Phase 2 work
-- Not actively pushing to GitHub Pages during foundation/build phases
-- Live at https://octale001.github.io/verbAfrica/ (last pushed at v1.0 baseline)
+- 11 cohort members loaded onto the platform
+- Enquiry/brief forms wired (Phase 2 complete) — submit to booking tracker + email notifications
+- `creatives.json` fetched with cache-busting (`?v=Date.now()`, `no-store`) so the live link always reflects latest
+- Live at https://octale001.github.io/verbAfrica/ (push to `main` → GitHub Pages rebuilds in ~30–60s)
 
-## The Cohort (10 creatives)
+## The Cohort (11 creatives)
 
 | # | Name | Category |
 |---|------|----------|
 | 1 | Shivolski | Dancer / MC / Content Creator |
 | 2 | Chef Nqobi | Culinary Artist / Food Filmmaker |
 | 3 | Kgale | Rapper / Singer / Guitarist |
-| 4 | Zolelo | Profile TBC |
+| 4 | Zolelo Magwaza | Videographer / Photographer / Content Creator (iiam3siixtii) |
 | 5 | Fifi Frequency | MC / Broadcaster / Voice-over |
 | 6 | Seru The Ellipsis | Artist / MC / Producer |
 | 7 | OhTeeh | Artist / Producer / Musical Director |
 | 8 | Hāzy | Audio Engineer / Music Producer |
 | 9 | LuMai | Singer / Songwriter / Model / Actress |
 | 10 | DG-TAL Format | Post Production Company |
+| 11 | Just Jabba (Njabulo Mpanza) | Rapper / Recording Artist / Wordsmith |
 
 ## Folder Structure
 

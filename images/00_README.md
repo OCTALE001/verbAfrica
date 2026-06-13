@@ -19,6 +19,7 @@ One image per cohort member. Filename matches the cohort markdown filename:
 08-hazy.jpg
 09-lumai.jpg
 10-dg.jpg
+11-just-jabba.jpg
 ```
 
 `.jpg` or `.png` — both work. Lowercase filenames.

@@ -19,7 +19,7 @@
 
 **Phase 2 complete · Beta testing in progress.**
 
-- The 10-creative beta cohort is loaded onto the platform.
+- The 11-creative beta cohort is loaded onto the platform.
 - Enquiry + brief forms submit to the booking tracker and send email notifications.
 - Phone/email of cohort hidden on public profiles — all contact routes through the enquiry form.
 - Cohort members have the site + feedback form; gathering UX feedback before trial clients are invited.
@@ -34,7 +34,7 @@ See [Strategy/02_Roadmap.md](Strategy/02_Roadmap.md) for the phased plan and dec
 |---|---|
 | [`README.md`](README.md) | This file — central index, live URLs, repo map |
 | [`index.html`](index.html) | The platform itself — single-page app, loads cohort from `data/creatives.json` |
-| [`data/creatives.json`](data/creatives.json) | Source of truth for what shows on the website. 10 cohort entries. |
+| [`data/creatives.json`](data/creatives.json) | Source of truth for what shows on the website. 11 cohort entries. |
 | [`Strategy/`](Strategy/) | Vision, Roadmap, decisions. *Where the company is going.* |
 | [`Operations/`](Operations/) | Booking Playbook, Response Standards, Forms Setup. *How the company runs day-to-day.* |
 | [`Cohort/`](Cohort/) | One markdown file per cohort member — internal notes (separate from public profile data) |
