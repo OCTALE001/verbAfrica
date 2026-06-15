@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-06-13 — The cohort becomes 11: Jabba in, Zolelo found
+
+The working number has always been 10. That changed.
+
+Just Jabba (Njabulo Mpanza) is a genre-fluid rapper at the intersection of hip-hop, Kwaito and jazz — BA Honours in Political Studies (Wits), BSocSci in International Relations (UCT), six languages, Apple Music editorial placements, brand partnerships with Red Bull and Markham. He's been written up in Mail & Guardian and represented South Africa at governance forums on four continents. 150K+ streams between his solo work and Bougie Pantsula (the satirical duo with Matt Ryan). Tagline: "Township-raised. World-trained. Untranslatable." There was no clean argument for leaving him out.
+
+On the same day, the Zolelo gap finally closed. Since June 9 he'd been the "Profile coming soon" placeholder — no EPK submitted, nothing findable at the time. His intake was filled from his portfolio site: Zolelo Magwaza, brand iiam3siixtii ("I am 360"), a visual storyteller trained in engineering who built his career across video production, photography and VFX. 750+ projects, 5,000+ digital assets, Netflix (Soweto Blaze), NBA Life Season 2, Brand SA's 30 Years of Democracy campaign. His original blankness wasn't absence — just timing.
+
+Both now have profile photos on the platform.
+
+One thing worth sitting with: "10 creatives" was always a working assumption, not a hard rule. The cohort is whoever the cohort actually is. Growing it should be intentional rather than incremental — worth naming explicitly so future additions are decisions, not drift.
+
+---
+
 ## 2026-06-11 — Figma 1:1 rebuild: two screens done, rate limit again
 
 The Canva prototype looked nothing like the site — generative tools improvise; they don't copy. So back to Figma (file `rpD0GbZn1P9meCWlecWeTX`) for a true 1:1 rebuild from `index.html` itself: real CSS tokens, real copy, real cohort data.
@@ -234,3 +248,9 @@ Noticed the cohort photos were cropping badly on the cards — Chef Nqobi's head
 The site already had a per-creative `imagePos` hook (Zolelo was using `center top`), so the fix was data, not code. Looked at all nine photos and set each one's position by where the face actually sits — `center top` for the high-framed shots (Chef, Zolelo), `center 25%`–`35%` for the rest. DG-TAL and Shivolski have no photo yet, so they stay on initials.
 
 Lesson worth keeping: when a layout knob already exists in the data layer, reach for that before touching CSS.
+
+---
+
+Alexander pushed back on that crop pass: the low `imagePos` values centred faces but cut off bodies and left dead space around the subjects. Reframed three by eye in the live preview — Jabba back to plain `center` (full seated figure + green outfit, "perfect before"), Zolelo to `center 12%` (20% clipped his eyes), Chef to `center 25%`. Left Seru alone.
+
+Lesson: "faces in frame" isn't the goal — *subject* centred is. A face dead-centre with the outfit cropped reads worse than a slightly high head with the whole person showing. Verify framing visually per-photo, not by a rule.
