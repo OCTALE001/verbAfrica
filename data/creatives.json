@@ -3,7 +3,7 @@
     "id": 0,
     "name": "Chef Nqobi",
     "image": "images/Chef_Nqobi.JPG",
-    "imagePos": "center top",
+    "imagePos": "center 25%",
     "role": "Culinary Artist / Food Filmmaker / Content Creator",
     "location": "Johannesburg",
     "genres": [
@@ -45,6 +45,8 @@
   {
     "id": 1,
     "name": "DG-TAL Format",
+    "image": "images/DG.jpg",
+    "imagePos": "center 8%",
     "role": "Post Production Company",
     "location": "South Africa",
     "genres": [
@@ -241,7 +243,7 @@
     "id": 4,
     "name": "Kgale",
     "image": "images/Kgale.JPG",
-    "imagePos": "center 35%",
+    "imagePos": "center 45%",
     "role": "Rapper / Singer / Guitarist",
     "location": "East Rand, Johannesburg",
     "genres": [
@@ -405,6 +407,8 @@
   {
     "id": 8,
     "name": "Shivolski",
+    "image": "images/Shivolski-104.JPG",
+    "imagePos": "center 20%",
     "role": "Dancer / MC / Content Creator",
     "location": "South Africa",
     "genres": [
@@ -466,7 +470,7 @@
     "id": 9,
     "name": "Zolelo Magwaza",
     "image": "images/04-zolelo.jpg",
-    "imagePos": "center top",
+    "imagePos": "center 12%",
     "role": "Videographer / Photographer / Filmmaker / Content Creator",
     "location": "Johannesburg",
     "genres": [
@@ -528,7 +532,7 @@
     "id": 10,
     "name": "Just Jabba",
     "image": "images/11-just-jabba.jpg",
-    "imagePos": "center 28%",
+    "imagePos": "center",
     "role": "Rapper / Recording Artist / Wordsmith",
     "location": "Johannesburg (East Rand)",
     "genres": [
