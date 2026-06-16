@@ -254,3 +254,21 @@ Lesson worth keeping: when a layout knob already exists in the data layer, reach
 Alexander pushed back on that crop pass: the low `imagePos` values centred faces but cut off bodies and left dead space around the subjects. Reframed three by eye in the live preview — Jabba back to plain `center` (full seated figure + green outfit, "perfect before"), Zolelo to `center 12%` (20% clipped his eyes), Chef to `center 25%`. Left Seru alone.
 
 Lesson: "faces in frame" isn't the goal — *subject* centred is. A face dead-centre with the outfit cropped reads worse than a slightly high head with the whole person showing. Verify framing visually per-photo, not by a rule.
+
+---
+
+All 11 cohort cards now have photos. Added DG-TAL Format (an environmental "at the laptop" shot — wider/looser than the rest) and Shivolski (the dynamic framing-hands portrait). DG's head sat under the badges, so its crop went much lower (`center 8%`) than the portraits. Flagged DG's different look as fuel for the eventual photo-uniformity pass. Committed as 85eab67.
+
+---
+
+## June 16, 2026 — Shivolski profile from media kit + killed the location pins
+
+Updated Shivolski's listing off her refreshed 2026 media kit. The PDF had far more than the old entry: real brand work (Capitec, Super C, 250 Machine, music videos for Speedsta & Zoocci Coke Dope), a sharper positioning bio (hip hop / Amapiano / youth culture, crowd psychology over plain hosting), and named events (Hipnotik, Southpoint, Wav Impact). Folded the strongest of it into bio, highlights, and notable in `data/creatives.json`. Left Cotton Fest / Zee Nation out on purpose — those are "where I'm headed" in the kit, not work done.
+
+Per Alexander, the role line now leads with all four titles: Dancer / Content Creator / Social Media Influencer / MC (was just "Dancer / MC / Content Creator"). The app only filters on three categories (Artists / MC / Content), so under the hood she stays `mc` + `content` — the extra titles are display-only for now.
+
+Two standing things came out of this session:
+- New hard rule: never use emojis in output unless explicitly asked. Saved to memory.
+- Acting on that, stripped the location-pin emoji from all five places it appeared in `index.html` (profile card, both listing-card variants, enquiry pill). Verified in the live preview — DOM shows zero pins left.
+
+Nothing committed yet; all changes sit in the working tree pending Alexander's go.

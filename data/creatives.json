@@ -409,11 +409,12 @@
     "name": "Shivolski",
     "image": "images/Shivolski-104.JPG",
     "imagePos": "center 20%",
-    "role": "Dancer / MC / Content Creator",
+    "role": "Dancer / Content Creator / Social Media Influencer / MC",
     "location": "South Africa",
     "genres": [
       "Dance",
       "Content Creation",
+      "Social Media",
       "MC"
     ],
     "filters": [
@@ -422,16 +423,18 @@
     ],
     "minRate": 1000,
     "rateLabel": "from R1,000",
-    "bio": "Dynamic dancer, MC and content creator known for sharp dance moves, hype hosting, and athlete & lifestyle content. Bridges live performance and social media influence across Instagram and TikTok with a growing international reach.",
+    "bio": "High-energy MC and dance content creator working at the intersection of hip hop, Amapiano and youth culture. Blends performance, rhythm and crowd psychology to turn hosting into immersive experiences — built in the hip hop scene and expanded into Amapiano spaces. Drawn to curated festivals, brand-led activations and large-scale cultural platforms, with growing international reach across Instagram and TikTok.",
     "highlights": [
-      "Halls OMFCC Campaign",
-      "Global ComLimited Football Commercial",
-      "Active across Instagram & TikTok with international reach",
-      "Brand collaboration specialist — promotions, product reviews, live hosting"
+      "Capitec & Super C brand campaigns",
+      "Halls OMFCC ambassador campaign",
+      "Global ComLimited football commercial",
+      "Dance collaborations with 250 Machine",
+      "Live hosting across festivals & student events — Hipnotik (Swaziland), Qwelfontein, Wav Impact"
     ],
     "notable": [
-      "Halls OMFCC Campaign",
-      "Global ComLimited Football Commercial"
+      "Music videos: Speedsta & Zoocci Coke Dope",
+      "Halls OMFCC ambassador campaign",
+      "Global ComLimited football commercial"
     ],
     "rates": [
       {

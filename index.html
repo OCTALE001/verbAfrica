@@ -1744,7 +1744,7 @@ function renderGrid(){
         <div class="listing-desc">${c.bio}</div>
         <div class="listing-footer">
           <div class="listing-rating"><span class="star">★</span> ${rating} (${reviews})</div>
-          <div class="listing-location">📍 ${c.location||'South Africa'}</div>
+          <div class="listing-location">${c.location||'South Africa'}</div>
         </div>
         <div class="listing-avail ${c.minRate===0&&c.rateLabel==='POA'?'poa':'avail'}">
           ${c.minRate===0&&c.rateLabel==='POA'?'◎ Rate on request':'● Available'}
@@ -1917,7 +1917,7 @@ function showProfile(id){
         <div class="detail-role">${c.role}</div>
         <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
           ${c.genres.map(g=>`<span class="tag">${g}</span>`).join('')}
-          ${c.location?`<span class="tag amber">📍 ${c.location}</span>`:''}
+          ${c.location?`<span class="tag amber">${c.location}</span>`:''}
         </div>
         <div class="detail-actions">
           <button class="action-btn primary" onclick="openEnquiry(${id})">📋 Send Enquiry</button>
@@ -2222,7 +2222,7 @@ function cpRenderProfile(c) {
         <div class="listing-desc">${c.bio.substring(0, 100)}…</div>
         <div class="listing-footer">
           <div class="listing-rating"><span class="star">★</span> ${rating} (${reviews})</div>
-          <div class="listing-location">📍 ${c.location || 'South Africa'}</div>
+          <div class="listing-location">${c.location || 'South Africa'}</div>
         </div>
       </div>
     </div>`;
@@ -2232,7 +2232,7 @@ function cpRenderProfile(c) {
     <div class="cp-profile-detail-name">${c.name}</div>
     <div class="cp-profile-detail-role">${c.role}</div>
     <div class="cp-profile-detail-meta">
-      <span>📍 ${c.location || 'South Africa'}</span>
+      <span>${c.location || 'South Africa'}</span>
       <span>💰 ${c.rateLabel}</span>
       <span>★ ${rating} (${reviews} reviews)</span>
     </div>
@@ -2345,7 +2345,7 @@ function cpRenderEnqList(list) {
       </div>
       <div class="cp-enq-desc">${e.desc}</div>
       <div class="cp-enq-meta">
-        <span class="cp-enq-meta-pill">📍 ${e.location}</span>
+        <span class="cp-enq-meta-pill">${e.location}</span>
         <span class="cp-enq-meta-pill">💰 ${e.budget}</span>
         <span class="cp-enq-meta-pill">⏱ ${e.timeline}</span>
         <span class="cp-enq-meta-pill">${catLabels[e.category] || e.category}</span>
