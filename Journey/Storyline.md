@@ -272,3 +272,23 @@ Two standing things came out of this session:
 - Acting on that, stripped the location-pin emoji from all five places it appeared in `index.html` (profile card, both listing-card variants, enquiry pill). Verified in the live preview — DOM shows zero pins left.
 
 Nothing committed yet; all changes sit in the working tree pending Alexander's go.
+
+---
+
+## 2026-06-23 — WhatsApp feedback round 1 (front-end fixes)
+
+Alexander sent a batch of 12 feedback notes (WhatsApp screenshots + text) from testing the live site on his phone. Agreed to defer real auth/accounts (Supabase) to a later proper-backend phase, and to leave the colour rework for last. Knocked out the rest in `index.html`:
+
+- **Bug — "Chef NqobiNew":** the detail header rendered an unstyled `New` span jammed against the name. Replaced with a proper `.detail-new-tag` green pill.
+- **Bug — profile photo "lost" on detail:** the 72px avatar square cropped too tight and read as a blur. Enlarged to 104px so the face reads.
+- **Badges over the face:** moved New/Available to bottom-left of the listing photo (`.listing-photo-badges`); save/compare buttons stay top-right. Verified the Chef Nqobi card — face fully clear.
+- **Socials hyperlinked:** IG handles in the detail Contact pill and the EPK now link to `instagram.com/<handle>` (new tab). Note: listing cards don't currently show a handle, so nothing to link there yet — flagged to Alexander.
+- **Fuzzy search:** added Levenshtein-based typo tolerance + token matching. "photogrepher" and "photo-xxx" now both resolve to the photographer (Zolelo). Tightened to avoid short-word false positives.
+- **Compare flow reworked:** removed the hidden "Compare mode" checkbox; the ⇄ button is now always visible on every card. Compare bar appears on first add; clicking Compare from a profile no longer dead-ends — second add auto-opens the comparison.
+- **Dashboard back button:** added a ← in the creative dashboard tab bar (`cpBackToSelect`) returning to the profile selector.
+
+Verified all of the above in the local preview (python http.server on :8000). Still open / pending Alexander's input: project-type list for Post Brief ("project types pending"), whether to surface IG handles on listing cards, and the colour direction. Nothing committed — changes sit in the working tree.
+
+**Follow-up same session:** Alexander confirmed IG handles on cards (added, purple, click-through to instagram.com). Project types: no preference → kept the current 9. Colour: no preference → reverted to the purple/blue scheme the code was clearly built for (vars are literally named --purple/--blue; a #7C3AED purple still lived in the "Contact via verbAfrica" button). Swapped every #C8860A/#E8A820/#9A6408 + rgba(200,134,10) to purple, set --blue to a real blue so gradients read purple→blue, and gave the landing + search heroes a purple→blue blend.
+
+While fixing the detail photo, found the actual root cause of "photo gets lost": the avatar rules use a `background:` *shorthand* for their no-photo gradient fallback, which silently resets `background-size` to `auto` — so real photos rendered at natural size (extreme zoom). Same latent bug affected shortlist / compare / EPK avatars. Fixed globally with a source-order override forcing `background-size:cover`. Detail header now shows a proper landscape photo (full-width on mobile). All verified in preview; zero console errors. Still nothing committed.

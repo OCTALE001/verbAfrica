@@ -7,25 +7,25 @@
 <style>
 /* ─── TOKENS ─────────────────────────────────── */
 :root {
-  --purple:       #C8860A;
-  --purple-l:     #E8A820;
-  --purple-d:     #9A6408;
-  --blue:         #C8860A;
-  --blue-l:       #E8A820;
+  --purple:       #7C3AED;
+  --purple-l:     #A78BFA;
+  --purple-d:     #5B21B6;
+  --blue:         #2563EB;
+  --blue-l:       #60A5FA;
   --dark:         #0C0C0C;
   --dark2:        #141414;
   --dark3:        #0F0F0F;
   --card:         #1A1A1A;
-  --border:       rgba(200,134,10,0.20);
-  --border-hi:    rgba(200,134,10,0.50);
+  --border:       rgba(124,58,237,0.20);
+  --border-hi:    rgba(124,58,237,0.50);
   --text:         #F0EDE6;
   --muted:        #9CA3AF;
   --muted2:       #6B7280;
   --green:        #10B981;
   --amber:        #F59E0B;
   --red:          #EF4444;
-  --tag-bg:       rgba(200,134,10,0.15);
-  --tag-border:   rgba(200,134,10,0.28);
+  --tag-bg:       rgba(124,58,237,0.15);
+  --tag-border:   rgba(124,58,237,0.28);
   --radius:       14px;
   --radius-sm:    9px;
   --gap:          20px;
@@ -53,7 +53,7 @@ body{
 }
 .logo{
   font-size:22px;font-weight:800;letter-spacing:-0.5px;cursor:pointer;
-  color:#C8860A;background:none;-webkit-text-fill-color:#C8860A;
+  color:#7C3AED;background:none;-webkit-text-fill-color:#7C3AED;
   display:flex;align-items:center;gap:8px;
 }
 .logo span{font-weight:300;opacity:0.45;}
@@ -64,7 +64,7 @@ body{
   transition:all .18s;white-space:nowrap;
 }
 .nav-btn:hover{color:#111;background:#F3F4F6;}
-.nav-btn.active{color:#C8860A;background:#FDF4E0;}
+.nav-btn.active{color:#7C3AED;background:#F3EEFE;}
 .nav-actions{display:flex;gap:8px;align-items:center;}
 .shortlist-btn-nav{
   display:flex;align-items:center;gap:6px;
@@ -73,17 +73,17 @@ body{
   border:1px solid #D1D5DB;background:transparent;color:#374151;
   transition:all .18s;
 }
-.shortlist-btn-nav:hover{border-color:#C8860A;color:#C8860A;}
-.shortlist-btn-nav.has-items{border-color:#C8860A;background:#FDF4E0;color:#C8860A;}
+.shortlist-btn-nav:hover{border-color:#7C3AED;color:#7C3AED;}
+.shortlist-btn-nav.has-items{border-color:#7C3AED;background:#F3EEFE;color:#7C3AED;}
 .shortlist-count-badge{
-  background:#C8860A;color:#fff;border-radius:50%;
+  background:#7C3AED;color:#fff;border-radius:50%;
   width:18px;height:18px;font-size:11px;font-weight:800;
   display:flex;align-items:center;justify-content:center;
 }
 .post-brief-cta{
   padding:8px 18px;border-radius:8px;font-size:13px;font-weight:700;
   cursor:pointer;border:none;
-  background:linear-gradient(135deg,#C8860A,#C8860A);
+  background:linear-gradient(135deg,#7C3AED,#7C3AED);
   color:#fff;transition:opacity .18s;
 }
 .post-brief-cta:hover{opacity:0.85;}
@@ -97,7 +97,7 @@ body{
 
 /* Search hero */
 .browse-search-hero{
-  background:linear-gradient(135deg,#C8860A 0%,#C8860A 35%,#C8860A 70%,#C8860A 100%);
+  background:linear-gradient(135deg,#7C3AED 0%,#6D28D9 45%,#2563EB 100%);
   padding:36px 32px;
   display:flex;align-items:center;justify-content:center;
 }
@@ -113,11 +113,11 @@ body{
 }
 .search-bar-input::placeholder{color:#9CA3AF;}
 .search-bar-btn{
-  background:#C8860A;color:#fff;border:none;padding:0 32px;
+  background:#7C3AED;color:#fff;border:none;padding:0 32px;
   font-size:15px;font-weight:700;cursor:pointer;
   transition:background .18s;white-space:nowrap;
 }
-.search-bar-btn:hover{background:#9A6408;}
+.search-bar-btn:hover{background:#5B21B6;}
 
 /* Category section */
 .browse-categories{
@@ -138,19 +138,19 @@ body{
   box-shadow:0 1px 4px rgba(0,0,0,0.06);
 }
 .cat-card:hover{
-  border-color:#C8860A;transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(200,134,10,0.12);
+  border-color:#7C3AED;transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(124,58,237,0.12);
 }
 .cat-icon{
   width:52px;height:52px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
   font-size:22px;margin-bottom:14px;
 }
-.cat-icon.music{background:#FDF4E0;}
-.cat-icon.dj{background:#FEF7E6;}
+.cat-icon.music{background:#F3EEFE;}
+.cat-icon.dj{background:#F3EEFE;}
 .cat-icon.mc{background:#F0FDF4;}
-.cat-icon.photo{background:#FFF7ED;}
-.cat-icon.post{background:#FEF7E8;}
+.cat-icon.photo{background:#F3EEFE;}
+.cat-icon.post{background:#F3EEFE;}
 .cat-icon.content{background:#ECFDF5;}
 .cat-name{font-size:15px;font-weight:700;color:#111827;margin-bottom:4px;}
 .cat-desc{font-size:12px;color:#6B7280;line-height:1.5;}
@@ -173,17 +173,17 @@ body{
   border:1px solid #D1D5DB;background:#fff;color:#6B7280;
   transition:all .18s;
 }
-.filter-btn:hover{border-color:#C8860A;color:#C8860A;}
-.filter-btn.active{background:#C8860A;border-color:#C8860A;color:#fff;}
+.filter-btn:hover{border-color:#7C3AED;color:#7C3AED;}
+.filter-btn.active{background:#7C3AED;border-color:#7C3AED;color:#fff;}
 .listings-meta{
   font-size:13px;color:#6B7280;display:flex;align-items:center;gap:12px;flex-shrink:0;
 }
-.listings-meta span{color:#C8860A;font-weight:700;}
+.listings-meta span{color:#7C3AED;font-weight:700;}
 .compare-toggle-hint{
   font-size:12px;color:#6B7280;cursor:pointer;
   display:flex;align-items:center;gap:5px;
 }
-.compare-toggle-hint input{cursor:pointer;accent-color:#C8860A;}
+.compare-toggle-hint input{cursor:pointer;accent-color:#7C3AED;}
 .budget-select{
   background:#fff;border:1px solid #D1D5DB;
   border-radius:8px;padding:7px 12px;
@@ -216,12 +216,15 @@ body{
 .listing-photo-overlay{
   position:absolute;top:10px;right:10px;display:flex;gap:6px;
 }
+.listing-photo-badges{
+  position:absolute;left:10px;bottom:10px;display:flex;gap:6px;
+}
 .listing-badge{
   padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;
   backdrop-filter:blur(8px);
 }
 .listing-badge.available{background:rgba(16,185,129,0.9);color:#fff;}
-.listing-badge.new-badge{background:rgba(200,134,10,0.90);color:#fff;}
+.listing-badge.new-badge{background:rgba(124,58,237,0.90);color:#fff;}
 .listing-save-btn{
   width:32px;height:32px;border-radius:50%;
   background:rgba(255,255,255,0.9);border:none;cursor:pointer;
@@ -230,15 +233,15 @@ body{
   transition:all .18s;
 }
 .listing-save-btn:hover{background:#fff;transform:scale(1.1);}
-.listing-save-btn.saved{color:#E8A820;}
+.listing-save-btn.saved{color:#A78BFA;}
 .listing-body{padding:16px;}
 .listing-top{
   display:flex;align-items:flex-start;justify-content:space-between;
   margin-bottom:6px;gap:8px;
 }
 .listing-name{font-size:16px;font-weight:700;color:#111827;line-height:1.3;}
-.listing-rate{font-size:14px;font-weight:700;color:#C8860A;white-space:nowrap;}
-.listing-role{font-size:12px;color:#C8860A;font-weight:600;margin-bottom:6px;}
+.listing-rate{font-size:14px;font-weight:700;color:#7C3AED;white-space:nowrap;}
+.listing-role{font-size:12px;color:#7C3AED;font-weight:600;margin-bottom:6px;}
 .listing-desc{
   font-size:12px;color:#6B7280;line-height:1.55;margin-bottom:12px;
   overflow:hidden;display:-webkit-box;
@@ -257,6 +260,14 @@ body{
 }
 .listing-avail.avail{color:#10B981;}
 .listing-avail.poa{color:#F59E0B;}
+.listing-bottom-row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;
+}
+.listing-ig{
+  font-size:12px;font-weight:600;color:var(--purple);text-decoration:none;
+  padding-top:6px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;
+}
+.listing-ig:hover{text-decoration:underline;}
 
 /* ─── EMPTY STATE /* ─── EMPTY STATE ─────────────────────────────── */
 .empty{text-align:center;padding:80px 20px;color:var(--muted);display:none;}
@@ -269,7 +280,7 @@ body{
   background:var(--dark2);border-top:1px solid var(--border-hi);
   padding:14px 32px;display:none;
   align-items:center;justify-content:space-between;gap:16px;
-  box-shadow:0 -8px 40px rgba(200,134,10,0.22);
+  box-shadow:0 -8px 40px rgba(124,58,237,0.22);
 }
 .compare-bar.visible{display:flex;}
 .compare-avatars{display:flex;gap:10px;align-items:center;}
@@ -322,17 +333,25 @@ body{
   border-radius:20px;width:100%;max-width:700px;overflow:hidden;position:relative;
 }
 .detail-head{
-  background:linear-gradient(135deg,rgba(200,134,10,0.22),rgba(200,134,10,0.12));
+  background:linear-gradient(135deg,rgba(124,58,237,0.22),rgba(124,58,237,0.12));
   padding:28px;border-bottom:1px solid var(--border);
   display:flex;align-items:flex-start;gap:18px;
 }
 .detail-avatar{
-  width:72px;height:72px;border-radius:16px;flex-shrink:0;
+  width:156px;height:104px;border-radius:14px;flex-shrink:0;
   background:linear-gradient(135deg,var(--purple),var(--blue));
   display:flex;align-items:center;justify-content:center;
-  font-size:28px;font-weight:800;color:#fff;
+  font-size:34px;font-weight:800;color:#fff;
 }
-.detail-name{font-size:24px;font-weight:800;margin-bottom:3px;}
+@media(max-width:680px){
+  .detail-head{flex-direction:column;}
+  .detail-avatar{width:100%;height:170px;}
+}
+.detail-name{font-size:24px;font-weight:800;margin-bottom:3px;display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
+.detail-new-tag{
+  font-size:10px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;background:var(--green);color:#fff;
+}
 .detail-role{font-size:11px;color:var(--purple-l);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
 .detail-actions{display:flex;gap:8px;margin-top:12px;}
 .action-btn{
@@ -343,8 +362,8 @@ body{
 .action-btn.primary:hover{opacity:0.85;}
 .action-btn.secondary{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text);}
 .action-btn.secondary:hover{border-color:var(--purple-l);color:var(--purple-l);}
-.action-btn.heart{background:rgba(200,134,10,0.10);border:1px solid rgba(200,134,10,0.25);color:#E8A820;}
-.action-btn.heart:hover{background:rgba(200,134,10,0.18);}
+.action-btn.heart{background:rgba(124,58,237,0.10);border:1px solid rgba(124,58,237,0.25);color:#A78BFA;}
+.action-btn.heart:hover{background:rgba(124,58,237,0.18);}
 .close-btn{
   position:absolute;top:14px;right:14px;
   background:rgba(255,255,255,0.08);border:none;color:var(--text);
@@ -383,7 +402,7 @@ body{
 }
 
 /* ─── ENQUIRY FORM ────────────────────────────── */
-.enquiry-form{background:rgba(200,134,10,0.06);border:1px solid var(--border);border-radius:12px;padding:18px;}
+.enquiry-form{background:rgba(124,58,237,0.06);border:1px solid var(--border);border-radius:12px;padding:18px;}
 .form-row{display:flex;gap:10px;margin-bottom:10px;}
 .form-group{flex:1;display:flex;flex-direction:column;gap:5px;}
 .form-label{font-size:11px;color:var(--muted);font-weight:700;}
@@ -564,7 +583,7 @@ body{
 .step-desc{font-size:13px;color:var(--muted);line-height:1.65;}
 .how-cta{text-align:center;margin-top:8px;}
 .how-cta-inner{
-  background:linear-gradient(135deg,rgba(200,134,10,0.18),rgba(200,134,10,0.12));
+  background:linear-gradient(135deg,rgba(124,58,237,0.18),rgba(124,58,237,0.12));
   border:1px solid var(--border);border-radius:20px;padding:40px;display:inline-block;
   max-width:500px;width:100%;
 }
@@ -604,7 +623,7 @@ body{
 /* ─── LANDING PAGE ────────────────────────────────── */
 #page-landing{
   display:none;min-height:100vh;
-  background:linear-gradient(135deg,#C8860A 0%,#C8860A 30%,#C8860A 55%,#C8860A 80%,#C8860A 100%);
+  background:linear-gradient(135deg,#7C3AED 0%,#6D28D9 40%,#3B2B8E 70%,#2563EB 100%);
   flex-direction:column;align-items:center;justify-content:flex-start;
   padding:0;
 }
@@ -642,8 +661,8 @@ body{
   display:flex;align-items:center;justify-content:center;
   font-size:26px;margin-bottom:20px;
 }
-.landing-card-icon.client{background:rgba(200,134,10,0.10);}
-.landing-card-icon.creative{background:rgba(200,134,10,0.10);}
+.landing-card-icon.client{background:rgba(124,58,237,0.10);}
+.landing-card-icon.creative{background:rgba(124,58,237,0.10);}
 .landing-card h2{font-size:22px;font-weight:800;color:#111;margin-bottom:10px;}
 .landing-card p{font-size:14px;color:#6B7280;line-height:1.6;margin-bottom:20px;}
 .landing-card ul{list-style:none;text-align:left;margin-bottom:24px;width:100%;}
@@ -658,8 +677,8 @@ body{
   display:flex;align-items:center;gap:6px;
   transition:gap .15s;
 }
-.landing-card-cta.client{color:#C8860A;}
-.landing-card-cta.creative{color:#C8860A;}
+.landing-card-cta.client{color:#7C3AED;}
+.landing-card-cta.creative{color:#7C3AED;}
 .landing-card-cta:hover{gap:10px;}
 .landing-footer{
   color:rgba(255,255,255,0.45);font-size:13px;padding-bottom:32px;
@@ -673,7 +692,7 @@ body{
 /* Creative nav additions */
 .cp-nav-mode-badge{
   font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;
-  background:linear-gradient(135deg,#C8860A,#C8860A);color:#fff;margin-left:6px;
+  background:linear-gradient(135deg,#7C3AED,#7C3AED);color:#fff;margin-left:6px;
 }
 .cp-enq-badge{
   background:#EF4444;color:#fff;border-radius:20px;padding:1px 6px;
@@ -692,7 +711,7 @@ body{
 }
 .cp-select-logo{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:22px;font-weight:800;color:#FDE8A8;margin-bottom:40px;letter-spacing:-0.3px;
+  font-size:22px;font-weight:800;color:#DDD0FE;margin-bottom:40px;letter-spacing:-0.3px;
 }
 .cp-select-title{
   font-size:clamp(32px,5vw,54px);font-weight:900;color:#fff;
@@ -712,18 +731,18 @@ body{
 }
 .cp-sel-card:hover{
   border-color:var(--purple);
-  background:rgba(200,134,10,0.10);
+  background:rgba(124,58,237,0.10);
   transform:translateY(-3px);
-  box-shadow:0 12px 32px rgba(200,134,10,0.15);
+  box-shadow:0 12px 32px rgba(124,58,237,0.15);
 }
 .cp-sel-avatar{
   width:56px;height:56px;border-radius:50%;
-  background:linear-gradient(135deg,var(--purple),#C8860A);
+  background:linear-gradient(135deg,var(--purple),#7C3AED);
   display:flex;align-items:center;justify-content:center;
   font-size:20px;font-weight:800;color:#fff;
   margin:0 auto 12px;
 }
-.cp-sel-name{font-size:14px;font-weight:700;color:#FDE8A8;margin-bottom:4px;}
+.cp-sel-name{font-size:14px;font-weight:700;color:#DDD0FE;margin-bottom:4px;}
 .cp-sel-role{font-size:12px;color:var(--muted);line-height:1.4;}
 .cp-sel-cat{
   display:inline-block;margin-top:8px;
@@ -757,6 +776,8 @@ body{
 }
 .cp-tab:hover{color:var(--text);}
 .cp-tab.active{color:var(--purple-l);border-bottom-color:var(--purple);}
+.cp-tab-back{color:var(--purple-l);font-size:18px;font-weight:700;padding:14px 14px;}
+.cp-tab-back:hover{color:var(--purple-l);background:rgba(124,58,237,0.10);}
 .cp-tab-badge{
   background:#EF4444;color:#fff;border-radius:20px;padding:1px 6px;
   font-size:10px;font-weight:800;margin-left:4px;
@@ -768,7 +789,7 @@ body{
 
 /* ─── WELCOME BANNER ─── */
 .cp-welcome-banner{
-  background:linear-gradient(135deg,rgba(200,134,10,0.20) 0%,rgba(200,134,10,0.12) 100%);
+  background:linear-gradient(135deg,rgba(124,58,237,0.20) 0%,rgba(124,58,237,0.12) 100%);
   border:1px solid var(--border-hi);border-radius:var(--radius);
   padding:28px 32px;margin-bottom:28px;
   display:flex;align-items:center;justify-content:space-between;
@@ -778,7 +799,7 @@ body{
 .cp-welcome-role{font-size:14px;color:var(--purple-l);}
 .cp-welcome-avatar{
   width:64px;height:64px;border-radius:50%;
-  background:linear-gradient(135deg,var(--purple),#C8860A);
+  background:linear-gradient(135deg,var(--purple),#7C3AED);
   display:flex;align-items:center;justify-content:center;
   font-size:24px;font-weight:800;color:#fff;flex-shrink:0;
 }
@@ -806,7 +827,7 @@ body{
   font-size:13px;font-weight:600;color:var(--text);cursor:pointer;
   transition:all .15s;
 }
-.cp-action-btn:hover{border-color:var(--purple);background:rgba(200,134,10,0.10);color:var(--purple-l);}
+.cp-action-btn:hover{border-color:var(--purple);background:rgba(124,58,237,0.10);color:var(--purple-l);}
 .cp-action-icon{font-size:16px;}
 .cp-action-badge{
   background:#EF4444;color:#fff;border-radius:20px;padding:1px 6px;font-size:10px;font-weight:800;
@@ -822,8 +843,8 @@ body{
 .cp-activity-item:hover{border-color:var(--border-hi);}
 .cp-activity-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px;}
 .cp-activity-dot.green{background:#10B981;}
-.cp-activity-dot.purple{background:#C8860A;}
-.cp-activity-dot.blue{background:#C8860A;}
+.cp-activity-dot.purple{background:#7C3AED;}
+.cp-activity-dot.blue{background:#7C3AED;}
 .cp-activity-dot.amber{background:#F59E0B;}
 .cp-activity-content{flex:1;}
 .cp-activity-title{font-size:13px;color:var(--text);margin-bottom:3px;}
@@ -835,7 +856,7 @@ body{
 .cp-listing-preview{max-width:340px;}
 .cp-edit-btn{
   padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;
-  background:linear-gradient(135deg,#C8860A,#C8860A);color:#fff;border:none;
+  background:linear-gradient(135deg,#7C3AED,#7C3AED);color:#fff;border:none;
   transition:opacity .15s;white-space:nowrap;
 }
 .cp-edit-btn:hover{opacity:0.85;}
@@ -856,7 +877,7 @@ body{
 .cp-highlight-item::before{content:"★";color:var(--purple-l);font-size:11px;flex-shrink:0;}
 .cp-rate-chips{display:flex;flex-wrap:wrap;gap:8px;}
 .cp-rate-chip{
-  background:rgba(200,134,10,0.10);border:1px solid var(--border-hi);
+  background:rgba(124,58,237,0.10);border:1px solid var(--border-hi);
   border-radius:8px;padding:8px 14px;font-size:12px;
 }
 .cp-rate-chip-label{color:var(--muted);margin-bottom:2px;}
@@ -874,13 +895,13 @@ body{
   background:transparent;border:1px solid var(--border);color:var(--muted);cursor:pointer;
   transition:all .15s;
 }
-.cp-enq-filter.active,.cp-enq-filter:hover{border-color:var(--purple);color:var(--purple-l);background:rgba(200,134,10,0.10);}
+.cp-enq-filter.active,.cp-enq-filter:hover{border-color:var(--purple);color:var(--purple-l);background:rgba(124,58,237,0.10);}
 .cp-enq-card{
   background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
   padding:20px 24px;margin-bottom:12px;cursor:pointer;
   transition:all .15s;
 }
-.cp-enq-card:hover{border-color:var(--purple);background:rgba(200,134,10,0.06);}
+.cp-enq-card:hover{border-color:var(--purple);background:rgba(124,58,237,0.06);}
 .cp-enq-card.new-enq{border-left:3px solid #10B981;}
 .cp-enq-card.replied-enq{border-left:3px solid var(--muted2);}
 .cp-enq-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:12px;}
@@ -896,7 +917,7 @@ body{
 .cp-enq-actions{display:flex;gap:8px;margin-top:14px;}
 .cp-enq-reply-btn{
   padding:7px 16px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;
-  background:linear-gradient(135deg,#C8860A,#C8860A);color:#fff;border:none;
+  background:linear-gradient(135deg,#7C3AED,#7C3AED);color:#fff;border:none;
 }
 .cp-enq-ignore-btn{
   padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;
@@ -915,7 +936,7 @@ body{
   overflow:hidden;margin-bottom:20px;
 }
 .cp-epk-banner{
-  background:linear-gradient(135deg,#C8860A 0%,#C8860A 50%,#C8860A 100%);
+  background:linear-gradient(135deg,#7C3AED 0%,#7C3AED 50%,#7C3AED 100%);
   padding:32px;display:flex;align-items:center;gap:20px;
 }
 .cp-epk-avatar-lg{
@@ -937,7 +958,7 @@ body{
 .cp-epk-highlights{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
 .cp-epk-hl{
   display:flex;align-items:center;gap:8px;
-  background:rgba(200,134,10,0.08);border:1px solid var(--border);
+  background:rgba(124,58,237,0.08);border:1px solid var(--border);
   border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text);
 }
 .cp-epk-hl::before{content:"✦";color:var(--purple-l);font-size:10px;flex-shrink:0;}
@@ -956,6 +977,14 @@ body{
   border-radius:8px;padding:8px 14px;
 }
 
+/* Photo-avatars use a `background:` gradient shorthand for their no-photo fallback,
+   which resets background-size to `auto`. When a real photo is set we need `cover`.
+   Declared last so it wins on source order; inline background-position (per-creative
+   imagePos) still takes precedence over the `center` fallback here. */
+.detail-avatar,.shortlist-item-avatar,.compare-slot-avatar,.compare-col-avatar,
+.brief-match-avatar,.cp-sel-avatar,.cp-welcome-avatar,.cp-epk-avatar-lg{
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+}
 </style>
 </head>
 <body>
@@ -1005,9 +1034,9 @@ body{
 <nav class="nav" id="mainNav" style="display:none;">
   <div class="logo" onclick="showPage('landing')">
     <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
-      <path d="M12 24V10l16-4v14" stroke="#C8860A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="8" cy="24" r="4" stroke="#C8860A" stroke-width="2.4"/>
-      <circle cx="24" cy="20" r="4" stroke="#C8860A" stroke-width="2.4"/>
+      <path d="M12 24V10l16-4v14" stroke="#7C3AED" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="8" cy="24" r="4" stroke="#7C3AED" stroke-width="2.4"/>
+      <circle cx="24" cy="20" r="4" stroke="#7C3AED" stroke-width="2.4"/>
     </svg>
     verb<span>Africa</span>
   </div>
@@ -1029,9 +1058,9 @@ body{
 <nav class="nav cp-nav" id="creativeNav" style="display:none;">
   <div class="logo" onclick="cpExitToLanding()">
     <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
-      <path d="M12 24V10l16-4v14" stroke="#C8860A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="8" cy="24" r="4" stroke="#C8860A" stroke-width="2.4"/>
-      <circle cx="24" cy="20" r="4" stroke="#C8860A" stroke-width="2.4"/>
+      <path d="M12 24V10l16-4v14" stroke="#7C3AED" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="8" cy="24" r="4" stroke="#7C3AED" stroke-width="2.4"/>
+      <circle cx="24" cy="20" r="4" stroke="#7C3AED" stroke-width="2.4"/>
     </svg>
     verb<span>Africa</span>
     <span class="cp-nav-mode-badge">Creative</span>
@@ -1044,7 +1073,7 @@ body{
   </div>
   <div class="nav-actions">
     <button class="nav-btn" onclick="cpSwitchToClient()" style="color:#6B7280;font-size:12px;">Switch to Client →</button>
-    <button class="post-brief-cta" onclick="cpEditProfile()" style="background:linear-gradient(135deg,#C8860A,#C8860A);">Edit Profile</button>
+    <button class="post-brief-cta" onclick="cpEditProfile()" style="background:linear-gradient(135deg,#7C3AED,#7C3AED);">Edit Profile</button>
   </div>
 </nav>
 
@@ -1115,9 +1144,6 @@ body{
           <option value="poa">POA / Negotiable</option>
         </select>
         <span><span id="resultCount">15</span> listings</span>
-        <label class="compare-toggle-hint">
-          <input type="checkbox" id="compareMode" onchange="toggleCompareMode()"> Compare
-        </label>
       </div>
     </div>
     <div class="listings-grid" id="grid"></div>
@@ -1131,7 +1157,7 @@ body{
   <div class="footer" style="background:#F9FAFB;color:#9CA3AF;border-top:1px solid #E5E7EB;">
     <div>verbAfrica Creative Directory &bull; 2026 &bull; All rates in ZAR &bull; Rates are indicative</div>
     <div style="margin-top:10px;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZ04vwUHNWAFdf5Z7u46lSbafc1iv-mqJ-BD_pnK7fV7fS2A/viewform" target="_blank" rel="noopener" style="color:#C8860A;text-decoration:none;font-weight:600;font-size:12px;">💬 Send feedback →</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZ04vwUHNWAFdf5Z7u46lSbafc1iv-mqJ-BD_pnK7fV7fS2A/viewform" target="_blank" rel="noopener" style="color:#7C3AED;text-decoration:none;font-weight:600;font-size:12px;">💬 Send feedback →</a>
     </div>
   </div>
 </div>
@@ -1330,9 +1356,9 @@ body{
     <div class="cp-select-hero">
       <div class="cp-select-logo">
         <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
-          <path d="M12 24V10l16-4v14" stroke="#E8A820" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="8" cy="24" r="4" stroke="#E8A820" stroke-width="2.2"/>
-          <circle cx="24" cy="20" r="4" stroke="#E8A820" stroke-width="2.2"/>
+          <path d="M12 24V10l16-4v14" stroke="#A78BFA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="8" cy="24" r="4" stroke="#A78BFA" stroke-width="2.2"/>
+          <circle cx="24" cy="20" r="4" stroke="#A78BFA" stroke-width="2.2"/>
         </svg>
         <span>verbAfrica <span style="font-weight:300;opacity:0.55;">Creative Hub</span></span>
       </div>
@@ -1350,6 +1376,7 @@ body{
 
     <!-- Sticky tab bar -->
     <div class="cp-tabs-bar">
+      <button class="cp-tab cp-tab-back" onclick="cpBackToSelect()" title="Back to profiles">←</button>
       <button class="cp-tab active" id="cptab-dash" onclick="cpShowTab('dash')">Dashboard</button>
       <button class="cp-tab" id="cptab-profile" onclick="cpShowTab('profile')">My Profile</button>
       <button class="cp-tab" id="cptab-enquiries" onclick="cpShowTab('enquiries')">Enquiries <span class="cp-tab-badge">3</span></button>
@@ -1590,7 +1617,7 @@ let state = {
   search: '',
   shortlist: JSON.parse(localStorage.getItem('va_shortlist') || '[]'),
   compare: [],
-  compareMode: false,
+  compareMode: true,
   selectedBudget: ''
 };
 
@@ -1599,6 +1626,43 @@ const $ = id => document.getElementById(id);
 function initials(n){ return n.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase(); }
 function avatarBg(c){ return c.image ? `style="background-image:url('${c.image}');background-position:${c.imagePos||'center'}"` : ''; }
 function avatarText(c){ return c.image ? '' : initials(c.name); }
+function igUrl(h){ return 'https://instagram.com/' + String(h).replace(/^@/,'').trim(); }
+
+/* ─── FUZZY / TYPO-TOLERANT SEARCH ──────────────────── */
+function _lev(a,b){
+  const m=a.length, n=b.length;
+  if(!m) return n; if(!n) return m;
+  let prev=Array.from({length:n+1},(_,i)=>i), cur=new Array(n+1);
+  for(let i=1;i<=m;i++){
+    cur[0]=i;
+    for(let j=1;j<=n;j++){
+      const cost=a[i-1]===b[j-1]?0:1;
+      cur[j]=Math.min(prev[j]+1, cur[j-1]+1, prev[j-1]+cost);
+    }
+    [prev,cur]=[cur,prev];
+  }
+  return prev[n];
+}
+function _fuzzyTokenMatch(qt, words){
+  if(qt.length<3) return false;
+  const maxDist = qt.length<=4 ? 1 : (qt.length<=7 ? 2 : 3);
+  for(const w of words){
+    if(w.length<3) continue;
+    if(w.includes(qt)) return true;                              // "photo" → "photography"
+    if(Math.abs(w.length-qt.length)<=maxDist && _lev(qt,w)<=maxDist) return true; // typos
+  }
+  return false;
+}
+function searchMatch(c, q){
+  if(!q) return true;
+  const idx=[c.name,c.role,c.location,...(c.genres||[]),...(c.filters||[]),c.bio].join(' ').toLowerCase();
+  if(idx.includes(q)) return true;                       // exact substring (fast path)
+  const words=idx.split(/[^a-z0-9]+/i).filter(Boolean);
+  const qtokens=q.split(/[^a-z0-9]+/i).filter(t=>t.length>=3);
+  if(!qtokens.length) return false;
+  // "similar to" — include if any meaningful query word fuzzy-matches a profile word
+  return qtokens.some(qt => _fuzzyTokenMatch(qt, words));
+}
 function showToast(msg, type=''){
   const t = $('toast'); t.textContent = msg; t.className = 'toast show'+(type?' '+type:'');
   setTimeout(()=>{ t.className='toast'; }, 2400);
@@ -1707,8 +1771,7 @@ function renderGrid(){
   const filtered = creatives.filter(c => {
     const matchF = state.filter === 'all' || c.filters.includes(state.filter);
     const matchB = rateInBudget(c, state.budget);
-    const str = [c.name,c.role,c.location,...c.genres,c.bio].join(' ').toLowerCase();
-    const matchS = !q || str.includes(q);
+    const matchS = searchMatch(c, q);
     return matchF && matchB && matchS;
   });
   $('resultCount').textContent = filtered.length;
@@ -1725,14 +1788,16 @@ function renderGrid(){
     <div class="listing-card${inCompare?' in-compare':''}" id="card-${c.id}" onclick="showProfile(${c.id})">
       <div class="listing-photo" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
         <div class="listing-photo-overlay">
-          ${c.isNew?`<span class="listing-badge new-badge">New</span>`:''}
-          <span class="listing-badge available">Available</span>
           <button class="listing-save-btn${inShortlist?' saved':''}"
             title="Save to shortlist"
             onclick="event.stopPropagation();toggleShortlist(${c.id})">${inShortlist?'♥':'♡'}</button>
-          ${state.compareMode?`<button class="listing-save-btn${inCompare?' saved':''}"
-            title="Compare" style="font-size:13px"
-            onclick="event.stopPropagation();toggleCompare(${c.id})">⇄</button>`:''}
+          <button class="listing-save-btn${inCompare?' saved':''}"
+            title="${inCompare?'Remove from compare':'Add to compare'}" style="font-size:13px"
+            onclick="event.stopPropagation();toggleCompare(${c.id})">⇄</button>
+        </div>
+        <div class="listing-photo-badges">
+          ${c.isNew?`<span class="listing-badge new-badge">New</span>`:''}
+          <span class="listing-badge available">Available</span>
         </div>
       </div>
       <div class="listing-body">
@@ -1746,8 +1811,11 @@ function renderGrid(){
           <div class="listing-rating"><span class="star">★</span> ${rating} (${reviews})</div>
           <div class="listing-location">${c.location||'South Africa'}</div>
         </div>
-        <div class="listing-avail ${c.minRate===0&&c.rateLabel==='POA'?'poa':'avail'}">
-          ${c.minRate===0&&c.rateLabel==='POA'?'◎ Rate on request':'● Available'}
+        <div class="listing-bottom-row">
+          <div class="listing-avail ${c.minRate===0&&c.rateLabel==='POA'?'poa':'avail'}">
+            ${c.minRate===0&&c.rateLabel==='POA'?'◎ Rate on request':'● Available'}
+          </div>
+          ${c.contact?.instagram?`<a class="listing-ig" href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" title="View on Instagram" onclick="event.stopPropagation()">📸 ${c.contact.instagram}</a>`:''}
         </div>
       </div>
     </div>`;
@@ -1808,10 +1876,6 @@ function compareFromShortlist(){
 }
 
 /* ─── COMPARE ────────────────────────────────────────── */
-function toggleCompareMode(){
-  state.compareMode = $('compareMode').checked;
-  if(!state.compareMode){ clearCompare(); } else { renderGrid(); }
-}
 function toggleCompare(id){
   const idx = state.compare.indexOf(id);
   if(idx === -1){
@@ -1827,7 +1891,7 @@ function updateCompareBar(){
   const slots = $('compareSlots');
   const hint = $('compareHint');
   const btn = $('compareNowBtn');
-  if(!state.compareMode || state.compare.length === 0){ bar.classList.remove('visible'); return; }
+  if(state.compare.length === 0){ bar.classList.remove('visible'); return; }
   bar.classList.add('visible');
   const n = state.compare.length;
   hint.textContent = n < 2 ? `Add ${2-n} more to compare` : 'Ready to compare!';
@@ -1847,7 +1911,7 @@ function updateCompareBar(){
   slots.innerHTML = allSlots;
 }
 function clearCompare(){
-  state.compare = []; $('compareMode').checked = false; state.compareMode = false;
+  state.compare = [];
   updateCompareBar(); renderGrid();
 }
 function openCompareModal(){
@@ -1900,7 +1964,7 @@ function showProfile(id){
      Phone + email are HIDDEN here — kept in data/creatives.json for internal use.
      All booking-related contact routes through the Send Enquiry form (→ Alexander). */
   const contactPills = [];
-  if(c.contact.instagram) contactPills.push(`<div class="contact-pill">📸 ${c.contact.instagram}</div>`);
+  if(c.contact.instagram) contactPills.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="contact-pill" style="text-decoration:none;cursor:pointer;color:var(--text)">📸 ${c.contact.instagram}</a>`);
   contactPills.push(`<a href="#" onclick="event.preventDefault();openEnquiry(${c.id})" class="contact-pill" style="text-decoration:none;cursor:pointer;background:rgba(124,58,237,0.15);border-color:var(--purple);color:#fff">💬 Contact via verbAfrica</a>`);
   const contactHtml = `
     <div class="detail-section">
@@ -1913,7 +1977,7 @@ function showProfile(id){
     <div class="detail-head">
       <div class="detail-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
       <div style="flex:1">
-        <div class="detail-name">${c.name}${c.isNew?'<span class="new-badge">New</span>':''}</div>
+        <div class="detail-name">${c.name}${c.isNew?'<span class="detail-new-tag">New</span>':''}</div>
         <div class="detail-role">${c.role}</div>
         <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
           ${c.genres.map(g=>`<span class="tag">${g}</span>`).join('')}
@@ -1998,12 +2062,19 @@ function toggleShortlistFromDetail(id){
   if(btn) btn.className = 'action-btn heart';
 }
 function addToCompareFromDetail(id){
-  if(!state.compareMode){
-    state.compareMode=true;
-    $('compareMode').checked=true;
+  // Add to compare (if not already in), then route the user somewhere useful —
+  // no more closing the profile and hunting for a "compare mode" toggle.
+  if(!state.compare.includes(id)){
+    if(state.compare.length >= 3){ showToast('Max 3 creatives for comparison'); return; }
+    state.compare.push(id);
+    renderGrid(); updateCompareBar();
   }
-  toggleCompare(id);
-  showToast('Added to compare');
+  closeDetailDirect();
+  if(state.compare.length >= 2){
+    openCompareModal();                 // enough to compare → show it straight away
+  } else {
+    showToast('Added to compare — pick one more');
+  }
 }
 async function sendEnquiry(id){
   const n = $('eq-name')?.value; const c = $('eq-contact')?.value; const m = $('eq-message')?.value;
@@ -2208,9 +2279,11 @@ function cpRenderProfile(c) {
     <div class="listing-card" style="max-width:320px;cursor:default;">
       <div class="listing-photo" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
         <div class="listing-photo-overlay">
+          <button class="listing-save-btn" style="cursor:default;">♡</button>
+        </div>
+        <div class="listing-photo-badges">
           ${c.isNew ? '<span class="listing-badge new-badge">New</span>' : ''}
           <span class="listing-badge available">Available</span>
-          <button class="listing-save-btn" style="cursor:default;">♡</button>
         </div>
       </div>
       <div class="listing-body">
@@ -2265,7 +2338,7 @@ function cpRenderProfile(c) {
 
 function cpRenderEpk(c) {
   const contactItems = [];
-  if (c.contact.instagram) contactItems.push(`<div class="cp-epk-contact-item">📸 ${c.contact.instagram}</div>`);
+  if (c.contact.instagram) contactItems.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="cp-epk-contact-item" style="text-decoration:none;cursor:pointer;">📸 ${c.contact.instagram}</a>`);
   if (c.contact.email) contactItems.push(`<div class="cp-epk-contact-item">✉️ ${c.contact.email}</div>`);
   if (c.contact.phone) contactItems.push(`<div class="cp-epk-contact-item">📞 ${c.contact.phone}</div>`);
 
@@ -2394,6 +2467,15 @@ function cpExitToLanding() {
   showPage('landing');
 }
 
+function cpBackToSelect() {
+  // Return from a creative's dashboard to the profile-selector screen.
+  $('creativeNav').style.display = 'none';
+  $('cpDashboard').style.display = 'none';
+  $('cpSelectScreen').style.display = 'block';
+  cpState.creativeId = null;
+  window.scrollTo(0, 0);
+}
+
 function cpSwitchToClient() {
   $('creativeNav').style.display = 'none';
   cpState.creativeId = null;
@@ -2415,17 +2497,20 @@ function cpRenderSelectGrid() {
 
 
 /* ─── INIT ────────────────────────────────────────────── */
+/* Landing is fully static — show it immediately so a data-load failure
+   (e.g. opened via file://, or a network blip) never leaves a black screen. */
+showPage('landing');
+
 fetch('data/creatives.json?v=' + Date.now(), { cache: 'no-store' })
   .then(r => r.json())
   .then(data => {
     creatives = data;
     updateShortlistNav();
     cpRenderSelectGrid();
-    showPage('landing');
   })
   .catch(e => {
     console.error('Failed to load creatives:', e);
-    showToast('Could not load creative data');
+    showToast('Could not load creative data — please refresh');
   });
 </script>
 </body>
