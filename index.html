@@ -37,10 +37,9 @@
   --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-head:    'Space Grotesk', 'Inter', system-ui, sans-serif;
 }
-.detail-avatar,.shortlist-item-avatar,.compare-slot-avatar,.compare-col-avatar,
-.brief-match-avatar,.cp-sel-avatar,.cp-welcome-avatar,.cp-epk-avatar-lg{
-  background-size:cover;background-position:center;
-}
+/* NB: photo-avatar background-size:cover lives in one rule near the end of this
+   stylesheet — it must come after the per-avatar `background:` gradient shorthand,
+   which would otherwise reset background-size to auto. */
 *{box-sizing:border-box;margin:0;padding:0;}
 /* ─── INLINE SVG ICON SYSTEM (replaces emoji) ─── */
 .ico{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;vertical-align:-0.16em;flex-shrink:0;line-height:0;}
@@ -214,11 +213,6 @@ body{
   font-size:13px;color:#6B7280;display:flex;align-items:center;gap:12px;flex-shrink:0;
 }
 .listings-meta span{color:#7C3AED;font-weight:700;}
-.compare-toggle-hint{
-  font-size:12px;color:#6B7280;cursor:pointer;
-  display:flex;align-items:center;gap:5px;
-}
-.compare-toggle-hint input{cursor:pointer;accent-color:#7C3AED;}
 .budget-select{
   background:#fff;border:1px solid #D1D5DB;
   border-radius:8px;padding:7px 12px;
@@ -1669,7 +1663,6 @@ let state = {
   search: '',
   shortlist: JSON.parse(localStorage.getItem('va_shortlist') || '[]'),
   compare: [],
-  compareMode: true,
   selectedBudget: ''
 };
 
@@ -1678,7 +1671,20 @@ const $ = id => document.getElementById(id);
 function initials(n){ return n.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase(); }
 function avatarBg(c){ return c.image ? `style="background-image:url('${c.image}');background-position:${c.imagePos||'center'}"` : ''; }
 function avatarText(c){ return c.image ? '' : initials(c.name); }
-function igUrl(h){ return 'https://instagram.com/' + String(h).replace(/^@/,'').trim(); }
+/* Normalise an Instagram handle: strip whitespace, leading @(s), a pasted
+   instagram.com URL, any trailing path, and anything that isn't a valid handle char. */
+function igHandle(h){
+  return String(h||'').trim()
+    .replace(/^@+/,'')
+    .replace(/^https?:\/\/(www\.)?instagram\.com\//i,'')
+    .replace(/[/?#].*$/,'')
+    .replace(/[^A-Za-z0-9._]/g,'');
+}
+function igUrl(h){ return 'https://instagram.com/' + igHandle(h); }
+/* Single source of truth for the Instagram link markup (used on cards, detail, EPK). */
+function igLink(handle, attrs=''){
+  return `<a href="${igUrl(handle)}" target="_blank" rel="noopener" ${attrs}>${icon('instagram')} ${handle}</a>`;
+}
 
 /* ─── ICONS (Lucide-style inline SVG, replaces emoji) ─── */
 const ICONS = {
@@ -1744,9 +1750,13 @@ function _fuzzyTokenMatch(qt, words){
 }
 function searchMatch(c, q){
   if(!q) return true;
-  const idx=[c.name,c.role,c.location,...(c.genres||[]),...(c.filters||[]),c.bio].join(' ').toLowerCase();
-  if(idx.includes(q)) return true;                       // exact substring (fast path)
-  const words=idx.split(/[^a-z0-9]+/i).filter(Boolean);
+  // Build the searchable index + word list once per creative, then reuse.
+  if(!c._sidx){
+    c._sidx = [c.name,c.role,c.location,...(c.genres||[]),...(c.filters||[]),c.bio].join(' ').toLowerCase();
+    c._swords = c._sidx.split(/[^a-z0-9]+/i).filter(Boolean);
+  }
+  if(c._sidx.includes(q)) return true;                   // exact substring (fast path)
+  const words=c._swords;
   const qtokens=q.split(/[^a-z0-9]+/i).filter(t=>t.length>=3);
   if(!qtokens.length) return false;
   // "similar to" — include if any meaningful query word fuzzy-matches a profile word
@@ -1928,7 +1938,7 @@ function renderGrid(){
           <div class="listing-avail ${c.minRate===0&&c.rateLabel==='POA'?'poa':'avail'}">
             ${c.minRate===0&&c.rateLabel==='POA'?'◎ Rate on request':'● Available'}
           </div>
-          ${c.contact?.instagram?`<a class="listing-ig" href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" title="View on Instagram" onclick="event.stopPropagation()">${icon('instagram')} ${c.contact.instagram}</a>`:''}
+          ${c.contact?.instagram?igLink(c.contact.instagram,`class="listing-ig" title="View on Instagram" onclick="event.stopPropagation()"`):''}
         </div>
       </div>
     </div>`;
@@ -2079,7 +2089,7 @@ function showProfile(id){
      Phone + email are HIDDEN here — kept in data/creatives.json for internal use.
      All booking-related contact routes through the Send Enquiry form (→ Alexander). */
   const contactPills = [];
-  if(c.contact?.instagram) contactPills.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="contact-pill" style="text-decoration:none;cursor:pointer;color:var(--text)">${icon('instagram')} ${c.contact.instagram}</a>`);
+  if(c.contact?.instagram) contactPills.push(igLink(c.contact.instagram,`class="contact-pill" style="text-decoration:none;cursor:pointer;color:var(--text)"`));
   contactPills.push(`<a href="#" onclick="event.preventDefault();openEnquiry(${c.id})" class="contact-pill" style="text-decoration:none;cursor:pointer;background:rgba(34,197,94,0.15);border-color:var(--cta);color:#fff">${icon('message')} Contact via verbAfrica</a>`);
   const contactHtml = `
     <div class="detail-section">
@@ -2460,7 +2470,7 @@ function cpRenderProfile(c) {
 
 function cpRenderEpk(c) {
   const contactItems = [];
-  if (c.contact?.instagram) contactItems.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="cp-epk-contact-item" style="text-decoration:none;cursor:pointer;">${icon('instagram')} ${c.contact.instagram}</a>`);
+  if (c.contact?.instagram) contactItems.push(igLink(c.contact.instagram,`class="cp-epk-contact-item" style="text-decoration:none;cursor:pointer;"`));
   if (c.contact?.email) contactItems.push(`<div class="cp-epk-contact-item">${icon('mail')} ${c.contact.email}</div>`);
   if (c.contact?.phone) contactItems.push(`<div class="cp-epk-contact-item">${icon('phone')} ${c.contact.phone}</div>`);
 
