@@ -22,6 +22,8 @@
   --muted:        #9CA3AF;
   --muted2:       #6B7280;
   --green:        #10B981;
+  --cta:          #22C55E;
+  --cta-d:        #16A34A;
   --amber:        #F59E0B;
   --red:          #EF4444;
   --tag-bg:       rgba(124,58,237,0.15);
@@ -36,6 +38,19 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
+/* Keyboard focus visibility (a11y) — visible ring on any focused interactive element */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
+textarea:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--purple-l);outline-offset:2px;border-radius:6px;
+}
+/* Respect reduced-motion preference */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important;
+  }
+}
 body{
   background:var(--dark);color:var(--text);
   font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
@@ -83,7 +98,7 @@ body{
 .post-brief-cta{
   padding:8px 18px;border-radius:8px;font-size:13px;font-weight:700;
   cursor:pointer;border:none;
-  background:linear-gradient(135deg,#7C3AED,#7C3AED);
+  background:linear-gradient(135deg,var(--cta),var(--cta-d));
   color:#fff;transition:opacity .18s;
 }
 .post-brief-cta:hover{opacity:0.85;}
@@ -226,7 +241,7 @@ body{
 .listing-badge.available{background:rgba(16,185,129,0.9);color:#fff;}
 .listing-badge.new-badge{background:rgba(124,58,237,0.90);color:#fff;}
 .listing-save-btn{
-  width:32px;height:32px;border-radius:50%;
+  width:40px;height:40px;border-radius:50%;
   background:rgba(255,255,255,0.9);border:none;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   font-size:15px;backdrop-filter:blur(8px);
@@ -253,7 +268,7 @@ body{
 }
 .listing-rating{font-size:12px;color:#374151;display:flex;align-items:center;gap:3px;}
 .listing-rating .star{color:#F59E0B;}
-.listing-location{font-size:12px;color:#9CA3AF;display:flex;align-items:center;gap:3px;}
+.listing-location{font-size:12px;color:#6B7280;display:flex;align-items:center;gap:3px;}
 .listing-avail{
   font-size:11px;font-weight:700;
   display:flex;align-items:center;gap:4px;padding-top:6px;
@@ -358,7 +373,7 @@ body{
   padding:8px 16px;border-radius:9px;font-size:12px;font-weight:700;
   cursor:pointer;transition:all .18s;
 }
-.action-btn.primary{background:linear-gradient(135deg,var(--purple),var(--blue));border:none;color:#fff;}
+.action-btn.primary{background:linear-gradient(135deg,var(--cta),var(--cta-d));border:none;color:#fff;}
 .action-btn.primary:hover{opacity:0.85;}
 .action-btn.secondary{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text);}
 .action-btn.secondary:hover{border-color:var(--purple-l);color:var(--purple-l);}
@@ -367,7 +382,7 @@ body{
 .close-btn{
   position:absolute;top:14px;right:14px;
   background:rgba(255,255,255,0.08);border:none;color:var(--text);
-  width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;
+  width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;
   display:flex;align-items:center;justify-content:center;transition:background .18s;
 }
 .close-btn:hover{background:rgba(255,255,255,0.18);}
@@ -416,7 +431,7 @@ body{
 .form-select option{background:#1A1A1A;}
 .form-submit{
   width:100%;padding:11px;border-radius:9px;font-size:13px;font-weight:700;
-  background:linear-gradient(135deg,var(--purple),var(--blue));
+  background:linear-gradient(135deg,var(--cta),var(--cta-d));
   border:none;color:#fff;cursor:pointer;transition:opacity .18s;margin-top:4px;
 }
 .form-submit:hover{opacity:0.85;}
@@ -532,7 +547,7 @@ body{
 .budget-chip.selected{background:var(--purple);border-color:var(--purple);color:#fff;}
 .brief-submit{
   width:100%;padding:14px;border-radius:10px;font-size:15px;font-weight:800;
-  background:linear-gradient(135deg,var(--purple),var(--blue));
+  background:linear-gradient(135deg,var(--cta),var(--cta-d));
   border:none;color:#fff;cursor:pointer;transition:opacity .18s;margin-top:8px;
 }
 .brief-submit:hover{opacity:0.85;}
@@ -618,6 +633,10 @@ body{
   .compare-avatars{flex-direction:column;width:100%;}
   .compare-slot{width:100%;}
   .how-hero h1{font-size:26px;}
+  /* a11y: 16px form fields stop iOS Safari auto-zoom on focus; lift dense body copy for readability */
+  .search-bar-input,.form-input,.form-textarea,.form-select,
+  .brief-input,.brief-textarea,.brief-select{font-size:16px;}
+  .listing-desc,.detail-bio{font-size:14px;}
 }
 
 /* ─── LANDING PAGE ────────────────────────────────── */
@@ -1197,7 +1216,7 @@ body{
       <p>Fill in the details below and we'll show you matched creatives instantly.</p>
 
       <div class="brief-field">
-        <label class="brief-label">Project type</label>
+        <label class="brief-label" for="briefType">Project type</label>
         <select class="brief-select" id="briefType" onchange="matchBrief()">
           <option value="">Select a project type…</option>
           <option value="music">Music production / recording</option>
@@ -1214,7 +1233,7 @@ body{
 
       <div class="brief-2col">
         <div class="brief-field">
-          <label class="brief-label">Timeline</label>
+          <label class="brief-label" for="briefTimeline">Timeline</label>
           <select class="brief-select" id="briefTimeline">
             <option value="urgent">ASAP (within 1 week)</option>
             <option value="soon">2–4 weeks</option>
@@ -1223,7 +1242,7 @@ body{
           </select>
         </div>
         <div class="brief-field">
-          <label class="brief-label">Location</label>
+          <label class="brief-label" for="briefLocation">Location</label>
           <input type="text" class="brief-input" id="briefLocation" placeholder="e.g. Johannesburg, Cape Town…">
         </div>
       </div>
@@ -1240,18 +1259,18 @@ body{
       </div>
 
       <div class="brief-field">
-        <label class="brief-label">Project description</label>
+        <label class="brief-label" for="briefDesc">Project description</label>
         <textarea class="brief-textarea" id="briefDesc"
           placeholder="Describe what you're looking for — the more detail the better. E.g. 'We need a photographer for a product launch event in Sandton, expecting 200 guests, 4-hour shoot...'"></textarea>
       </div>
 
       <div class="brief-2col">
         <div class="brief-field">
-          <label class="brief-label">Your name</label>
+          <label class="brief-label" for="briefName">Your name</label>
           <input type="text" class="brief-input" id="briefName" placeholder="Full name">
         </div>
         <div class="brief-field">
-          <label class="brief-label">Email / WhatsApp</label>
+          <label class="brief-label" for="briefContact">Email / WhatsApp</label>
           <input type="text" class="brief-input" id="briefContact" placeholder="contact@brand.com or 0821234567">
         </div>
       </div>
@@ -1554,7 +1573,7 @@ body{
   <div class="compare-card-wrapper" id="compareWrapper">
     <div class="compare-header">
       <h2>⇄ Compare Creatives</h2>
-      <button class="close-btn" onclick="closeCompareModal()">✕</button>
+      <button class="close-btn" onclick="closeCompareModal()" aria-label="Close comparison">✕</button>
     </div>
     <div class="compare-cols" id="compareCols"></div>
   </div>
@@ -1571,7 +1590,7 @@ body{
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- ══════════ SCRIPTS ══════════ -->
 <script>
@@ -1786,7 +1805,7 @@ function renderGrid(){
     const photo   = getPhoto(c);
     return `
     <div class="listing-card${inCompare?' in-compare':''}" id="card-${c.id}" onclick="showProfile(${c.id})">
-      <div class="listing-photo" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
+      <div class="listing-photo" role="img" aria-label="Photo of ${c.name}" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
         <div class="listing-photo-overlay">
           <button class="listing-save-btn${inShortlist?' saved':''}"
             title="Save to shortlist"
@@ -1903,7 +1922,7 @@ function updateCompareBar(){
       return `<div class="compare-slot filled">
         <div class="compare-slot-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
         <div><div class="compare-slot-name">${c.name}</div><div class="compare-slot-role">${c.role}</div></div>
-        <button class="compare-slot-remove" onclick="toggleCompare(${id})">✕</button>
+        <button class="compare-slot-remove" onclick="toggleCompare(${id})" aria-label="Remove ${c.name} from comparison">✕</button>
       </div>`;
     }
     return `<div class="compare-slot"><div class="compare-slot-empty">+ Add creative</div></div>`;
@@ -1964,8 +1983,8 @@ function showProfile(id){
      Phone + email are HIDDEN here — kept in data/creatives.json for internal use.
      All booking-related contact routes through the Send Enquiry form (→ Alexander). */
   const contactPills = [];
-  if(c.contact.instagram) contactPills.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="contact-pill" style="text-decoration:none;cursor:pointer;color:var(--text)">📸 ${c.contact.instagram}</a>`);
-  contactPills.push(`<a href="#" onclick="event.preventDefault();openEnquiry(${c.id})" class="contact-pill" style="text-decoration:none;cursor:pointer;background:rgba(124,58,237,0.15);border-color:var(--purple);color:#fff">💬 Contact via verbAfrica</a>`);
+  if(c.contact?.instagram) contactPills.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="contact-pill" style="text-decoration:none;cursor:pointer;color:var(--text)">📸 ${c.contact.instagram}</a>`);
+  contactPills.push(`<a href="#" onclick="event.preventDefault();openEnquiry(${c.id})" class="contact-pill" style="text-decoration:none;cursor:pointer;background:rgba(34,197,94,0.15);border-color:var(--cta);color:#fff">💬 Contact via verbAfrica</a>`);
   const contactHtml = `
     <div class="detail-section">
       <div class="section-label">Contact</div>
@@ -1973,9 +1992,9 @@ function showProfile(id){
     </div>`;
 
   $('detailCard').innerHTML = `
-    <button class="close-btn" onclick="closeDetailDirect()">✕</button>
+    <button class="close-btn" onclick="closeDetailDirect()" aria-label="Close profile">✕</button>
     <div class="detail-head">
-      <div class="detail-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
+      <div class="detail-avatar" role="img" aria-label="Photo of ${c.name}" ${avatarBg(c)}>${avatarText(c)}</div>
       <div style="flex:1">
         <div class="detail-name">${c.name}${c.isNew?'<span class="detail-new-tag">New</span>':''}</div>
         <div class="detail-role">${c.role}</div>
@@ -2012,17 +2031,17 @@ function showProfile(id){
         <div class="enquiry-form">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Your name</label>
+              <label class="form-label" for="eq-name">Your name</label>
               <input type="text" class="form-input" id="eq-name" placeholder="Full name">
             </div>
             <div class="form-group">
-              <label class="form-label">Email / WhatsApp</label>
+              <label class="form-label" for="eq-contact">Email / WhatsApp</label>
               <input type="text" class="form-input" id="eq-contact" placeholder="contact@brand.com">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Project type</label>
+              <label class="form-label" for="eq-type">Project type</label>
               <select class="form-select" id="eq-type">
                 <option>Performance / Live set</option>
                 <option>Photography / Video</option>
@@ -2033,12 +2052,12 @@ function showProfile(id){
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label">Budget</label>
+              <label class="form-label" for="eq-budget">Budget</label>
               <input type="text" class="form-input" id="eq-budget" placeholder="e.g. R15,000">
             </div>
           </div>
           <div class="form-group" style="margin-bottom:10px">
-            <label class="form-label">Message</label>
+            <label class="form-label" for="eq-message">Message</label>
             <textarea class="form-textarea" id="eq-message" placeholder="Describe your project, date, venue, requirements…"></textarea>
           </div>
           <button class="form-submit" onclick="sendEnquiry(${id})">Send Enquiry →</button>
@@ -2277,7 +2296,7 @@ function cpRenderProfile(c) {
   const reviews = fakeReviews(c.id);
   $('cpListingPreview').innerHTML = `
     <div class="listing-card" style="max-width:320px;cursor:default;">
-      <div class="listing-photo" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
+      <div class="listing-photo" role="img" aria-label="Photo of ${c.name}" style="background-image:url('${photo}');background-position:${c.imagePos||'center'}">
         <div class="listing-photo-overlay">
           <button class="listing-save-btn" style="cursor:default;">♡</button>
         </div>
@@ -2338,9 +2357,9 @@ function cpRenderProfile(c) {
 
 function cpRenderEpk(c) {
   const contactItems = [];
-  if (c.contact.instagram) contactItems.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="cp-epk-contact-item" style="text-decoration:none;cursor:pointer;">📸 ${c.contact.instagram}</a>`);
-  if (c.contact.email) contactItems.push(`<div class="cp-epk-contact-item">✉️ ${c.contact.email}</div>`);
-  if (c.contact.phone) contactItems.push(`<div class="cp-epk-contact-item">📞 ${c.contact.phone}</div>`);
+  if (c.contact?.instagram) contactItems.push(`<a href="${igUrl(c.contact.instagram)}" target="_blank" rel="noopener" class="cp-epk-contact-item" style="text-decoration:none;cursor:pointer;">📸 ${c.contact.instagram}</a>`);
+  if (c.contact?.email) contactItems.push(`<div class="cp-epk-contact-item">✉️ ${c.contact.email}</div>`);
+  if (c.contact?.phone) contactItems.push(`<div class="cp-epk-contact-item">📞 ${c.contact.phone}</div>`);
 
   $('cpEpkContent').innerHTML = `
     <div class="cp-epk-card">
@@ -2507,6 +2526,7 @@ fetch('data/creatives.json?v=' + Date.now(), { cache: 'no-store' })
     creatives = data;
     updateShortlistNav();
     cpRenderSelectGrid();
+    renderGrid();   // populate the browse grid in case the user navigated there before data loaded
   })
   .catch(e => {
     console.error('Failed to load creatives:', e);
