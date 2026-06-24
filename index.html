@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>verbAfrica — Creative Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ─── TOKENS ─────────────────────────────────── */
 :root {
@@ -31,6 +34,8 @@
   --radius:       14px;
   --radius-sm:    9px;
   --gap:          20px;
+  --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-head:    'Space Grotesk', 'Inter', system-ui, sans-serif;
 }
 .detail-avatar,.shortlist-item-avatar,.compare-slot-avatar,.compare-col-avatar,
 .brief-match-avatar,.cp-sel-avatar,.cp-welcome-avatar,.cp-epk-avatar-lg{
@@ -53,8 +58,16 @@ textarea:focus-visible,[tabindex]:focus-visible{
 }
 body{
   background:var(--dark);color:var(--text);
-  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  font-family:var(--font-body);
   min-height:100vh; overflow-x:hidden;
+}
+/* Display typeface for brand marks, hero headings, names and section titles */
+.logo,.landing-logo,.cp-select-logo,.cp-nav-mode-badge,
+.landing-hero h1,.how-hero h1,.cp-select-title,.page-hero h1,
+.browse-section-title,.detail-name,.cp-welcome-name,.cp-epk-title,
+.cp-profile-detail-name,.landing-card h2,.how-cta-inner h2,
+.brief-form-card h2,.step-num,.cp-stat-num{
+  font-family:var(--font-head);
 }
 
 /* ─── TOP NAV ─────────────────────────────────── */
@@ -283,6 +296,19 @@ body{
   padding-top:6px;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;
 }
 .listing-ig:hover{text-decoration:underline;}
+
+/* Loading skeletons (shown while creatives.json is in flight) */
+.skeleton-card{pointer-events:none;}
+.skel,.skel-line{
+  background:linear-gradient(90deg,#ECEEF1 25%,#F5F6F8 37%,#ECEEF1 63%);
+  background-size:400% 100%;animation:skel-shimmer 1.4s ease infinite;
+}
+.listing-photo.skel{height:200px;}
+.skel-body{padding:16px;}
+.skel-line{height:12px;border-radius:6px;margin-bottom:10px;}
+.skel-line.w40{width:40%;}.skel-line.w60{width:60%;}
+.skel-line.w80{width:80%;}.skel-line.w90{width:90%;}
+@keyframes skel-shimmer{0%{background-position:100% 0;}100%{background-position:0 0;}}
 
 /* ─── EMPTY STATE /* ─── EMPTY STATE ─────────────────────────────── */
 .empty{text-align:center;padding:80px 20px;color:var(--muted);display:none;}
@@ -1779,11 +1805,35 @@ function getPhoto(c){
   const idx = c.id % pool.length;
   return `https://images.unsplash.com/${pool[idx]}?w=480&h=260&fit=crop&q=80`;
 }
-function fakeRating(id){ return (4.5 + (id*7%10)/20).toFixed(1); }
-function fakeReviews(id){ return 12 + (id*13)%87; }
+/* Ratings are 0 until real reviews exist — no fabricated social proof.
+   The card hides the rating row entirely when reviewCount is 0. */
+function fakeRating(id){ return 0; }
+function fakeReviews(id){ return 0; }
+
+/* Loading state: true once creatives.json has resolved */
+let dataLoaded = false;
+function skeletonCards(n=8){
+  return Array.from({length:n}).map(()=>`
+    <div class="listing-card skeleton-card" aria-hidden="true">
+      <div class="listing-photo skel"></div>
+      <div class="skel-body">
+        <div class="skel-line w60"></div>
+        <div class="skel-line w40"></div>
+        <div class="skel-line w90"></div>
+        <div class="skel-line w80"></div>
+      </div>
+    </div>`).join('');
+}
 
 /* ─── GRID RENDER ────────────────────────────────────── */
 function renderGrid(){
+  const g0 = $('grid'); const empty0 = $('emptyState');
+  if(!dataLoaded){                       // still fetching — show skeletons, not an empty state
+    if(g0) g0.innerHTML = skeletonCards();
+    if(empty0) empty0.style.display='none';
+    const rc = $('resultCount'); if(rc) rc.textContent='…';
+    return;
+  }
   const q = ($('searchInput')?.value || '').toLowerCase();
   state.search = q;
   state.budget = $('budgetFilter')?.value || 'all';
@@ -1827,7 +1877,7 @@ function renderGrid(){
         <div class="listing-role">${c.role}</div>
         <div class="listing-desc">${c.bio}</div>
         <div class="listing-footer">
-          <div class="listing-rating"><span class="star">★</span> ${rating} (${reviews})</div>
+          ${reviews>0?`<div class="listing-rating"><span class="star">★</span> ${rating} (${reviews})</div>`:`<div class="listing-rating" style="color:var(--muted2)">New to verbAfrica</div>`}
           <div class="listing-location">${c.location||'South Africa'}</div>
         </div>
         <div class="listing-bottom-row">
@@ -2313,7 +2363,7 @@ function cpRenderProfile(c) {
         <div class="listing-role">${c.role}</div>
         <div class="listing-desc">${c.bio.substring(0, 100)}…</div>
         <div class="listing-footer">
-          <div class="listing-rating"><span class="star">★</span> ${rating} (${reviews})</div>
+          ${reviews>0?`<div class="listing-rating"><span class="star">★</span> ${rating} (${reviews})</div>`:`<div class="listing-rating" style="color:var(--muted2)">New to verbAfrica</div>`}
           <div class="listing-location">${c.location || 'South Africa'}</div>
         </div>
       </div>
@@ -2524,9 +2574,10 @@ fetch('data/creatives.json?v=' + Date.now(), { cache: 'no-store' })
   .then(r => r.json())
   .then(data => {
     creatives = data;
+    dataLoaded = true;
     updateShortlistNav();
     cpRenderSelectGrid();
-    renderGrid();   // populate the browse grid in case the user navigated there before data loaded
+    renderGrid();   // replace skeletons / populate the grid in case the user navigated there first
   })
   .catch(e => {
     console.error('Failed to load creatives:', e);
