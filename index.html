@@ -421,7 +421,13 @@ body{
   display:flex;align-items:center;gap:8px;
 }
 .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
-.detail-bio{font-size:13px;color:var(--muted);line-height:1.75;}
+.detail-bio{font-size:13px;color:var(--muted);line-height:1.75;white-space:pre-line;}
+.tag{
+  display:inline-flex;align-items:center;padding:4px 11px;border-radius:20px;
+  font-size:11px;font-weight:600;
+  background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--purple-l);
+}
+.tag.amber{background:rgba(245,158,11,0.10);border-color:rgba(245,158,11,0.30);color:var(--amber);}
 .rates-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .rate-box{
   background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);
@@ -917,7 +923,7 @@ body{
 .cp-profile-detail-name{font-size:24px;font-weight:900;color:#fff;margin-bottom:4px;}
 .cp-profile-detail-role{font-size:15px;color:var(--purple-l);margin-bottom:12px;}
 .cp-profile-detail-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:20px;}
-.cp-profile-detail-bio{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:20px;}
+.cp-profile-detail-bio{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:20px;white-space:pre-line;}
 .cp-detail-section{margin-bottom:20px;}
 .cp-detail-section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:10px;}
 .cp-highlight-list{display:flex;flex-direction:column;gap:6px;}
@@ -1002,7 +1008,7 @@ body{
   color:var(--purple-l);margin-bottom:12px;
   padding-bottom:8px;border-bottom:1px solid var(--border);
 }
-.cp-epk-body-text{font-size:14px;color:var(--text);line-height:1.7;}
+.cp-epk-body-text{font-size:14px;color:var(--text);line-height:1.7;white-space:pre-line;}
 .cp-epk-highlights{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;}
 .cp-epk-hl{
   display:flex;align-items:center;gap:8px;
@@ -2087,6 +2093,11 @@ function showProfile(id){
       <div class="section-label">Notable Work</div>
       <ul class="highlights">${c.notable.map(n=>`<li>${n}</li>`).join('')}</ul>
     </div>` : '';
+  const beyondHtml = c.beyond?.length ? `
+    <div class="detail-section">
+      <div class="section-label">Beyond the Music</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px">${c.beyond.map(b=>`<span class="tag">${b}</span>`).join('')}</div>
+    </div>` : '';
   /* PUBLIC contact display only shows Instagram (which is already public on IG).
      Phone + email are HIDDEN here — kept in data/creatives.json for internal use.
      All booking-related contact routes through the Send Enquiry form (→ Alexander). */
@@ -2129,6 +2140,7 @@ function showProfile(id){
         <ul class="highlights">${hlHtml}</ul>
       </div>
       ${notableHtml}
+      ${beyondHtml}
       <div class="detail-section">
         <div class="section-label">Rates (2025 / 2026)</div>
         <div class="rates-grid">${ratesHtml}</div>
@@ -2454,6 +2466,13 @@ function cpRenderProfile(c) {
         ${c.notable.map(n => `<span class="cp-genre-tag">${n}</span>`).join('')}
       </div>
     </div>
+    ${c.beyond?.length ? `
+    <div class="cp-detail-section">
+      <div class="cp-detail-section-title">Beyond the Music</div>
+      <div class="cp-genre-tags">
+        ${c.beyond.map(b => `<span class="cp-genre-tag">${b}</span>`).join('')}
+      </div>
+    </div>` : ''}
     <div class="cp-detail-section">
       <div class="cp-detail-section-title">Genres & Tags</div>
       <div class="cp-genre-tags">
@@ -2502,6 +2521,13 @@ function cpRenderEpk(c) {
             ${c.notable.map(n => `<span class="cp-genre-tag">${n}</span>`).join('')}
           </div>
         </div>
+        ${c.beyond?.length ? `
+        <div class="cp-epk-section">
+          <div class="cp-epk-section-title">Beyond the Music</div>
+          <div class="cp-genre-tags">
+            ${c.beyond.map(b => `<span class="cp-genre-tag">${b}</span>`).join('')}
+          </div>
+        </div>` : ''}
         <div class="cp-epk-section">
           <div class="cp-epk-section-title">Genres</div>
           <div class="cp-genre-tags">
