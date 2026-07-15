@@ -1031,6 +1031,102 @@ body{
   border-radius:8px;padding:8px 14px;
 }
 
+/* ─── VERIFIED BADGE ──────────────────────────── */
+.verified-badge{
+  display:inline-flex;align-items:center;gap:4px;vertical-align:-2px;flex-shrink:0;
+}
+.verified-badge .ico{
+  width:16px;height:16px;background:#7C3AED;color:#fff;border-radius:50%;padding:3px;
+}
+.verified-badge .ico svg{stroke-width:3.5;}
+.verified-badge .vb-text{
+  font-size:10px;font-weight:800;color:#7C3AED;text-transform:uppercase;letter-spacing:0.05em;
+}
+.detail .verified-badge .vb-text{color:var(--purple-l);}
+.cp-epk-title .verified-badge .ico{background:#fff;color:#7C3AED;}
+
+/* ─── LISTING CARD CTA (Book Now / Request a Quote) ─── */
+.listing-cta{
+  width:100%;margin-top:12px;padding:10px;border-radius:9px;
+  font-size:13px;font-weight:700;cursor:pointer;transition:all .18s;
+  font-family:inherit;
+}
+.listing-cta.book{background:linear-gradient(135deg,var(--cta),var(--cta-d));border:none;color:#fff;}
+.listing-cta.book:hover{opacity:0.88;}
+.listing-cta.quote{background:#F3EEFE;border:1px solid #7C3AED;color:#7C3AED;}
+.listing-cta.quote:hover{background:#7C3AED;color:#fff;}
+.poa-note{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;}
+
+/* ─── SHORTLIST HEART POP (micro-interaction) ─── */
+@keyframes heart-pop{0%{transform:scale(1);}40%{transform:scale(1.4);}100%{transform:scale(1);}}
+.listing-save-btn.pop{animation:heart-pop .35s ease;}
+
+/* ─── MOBILE HAMBURGER MENU ───────────────────── */
+.nav-burger{
+  display:none;width:40px;height:40px;border:none;background:transparent;
+  cursor:pointer;color:#374151;border-radius:8px;
+  align-items:center;justify-content:center;flex-shrink:0;
+}
+.nav-burger:hover{background:#F3F4F6;}
+.nav-burger .ico{width:22px;height:22px;}
+.nav-mobile-menu{
+  display:none;position:fixed;top:64px;left:0;right:0;z-index:290;
+  background:#fff;border-bottom:1px solid #E5E7EB;
+  box-shadow:0 12px 24px rgba(0,0,0,0.10);
+  padding:8px 16px 14px;flex-direction:column;gap:2px;
+}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu .nav-btn{text-align:left;width:100%;padding:12px 14px;font-size:15px;}
+@media(max-width:680px){
+  .nav-burger{display:flex;}
+  .nav .post-brief-cta{display:none;}
+  #creativeNav .nav-actions .nav-btn{display:none;}
+}
+
+/* ─── LANDING "HOW IT WORKS" STRIP ────────────── */
+.landing-steps-wrap{
+  padding:0 24px 56px;width:100%;max-width:1000px;
+  display:flex;flex-direction:column;align-items:center;gap:16px;
+}
+.landing-steps-title{
+  font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+}
+.landing-steps{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;width:100%;
+}
+.landing-step{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);
+  border-radius:12px;padding:10px 16px;color:#fff;backdrop-filter:blur(6px);
+  min-width:200px;flex:1;max-width:240px;
+}
+.landing-step-num{
+  width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;flex-shrink:0;font-family:var(--font-head);
+}
+.landing-step-label{font-size:13px;font-weight:700;}
+.landing-step-sub{font-size:11px;color:rgba(255,255,255,0.65);margin-top:1px;}
+.landing-steps-link{
+  background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,0.85);font-size:13px;font-weight:700;
+  padding:10px 16px;border-radius:8px;transition:background .18s;
+}
+.landing-steps-link:hover{background:rgba(255,255,255,0.10);}
+@media(max-width:680px){
+  .landing-step{max-width:100%;}
+}
+
+/* ─── CREATIVE HUB "SAMPLE DATA" PILL ─────────── */
+.cp-preview-pill{
+  display:inline-block;margin-left:8px;font-size:9px;font-weight:800;letter-spacing:0.06em;
+  text-transform:uppercase;padding:2px 8px;border-radius:20px;
+  background:rgba(245,158,11,0.15);color:var(--amber);border:1px solid rgba(245,158,11,0.35);
+  vertical-align:1px;
+}
+.cp-select-note{font-size:13px;color:var(--muted2);margin-top:10px;}
+
 /* Photo-avatars use a `background:` gradient shorthand for their no-photo fallback,
    which resets background-size to `auto`. When a real photo is set we need `cover`.
    Declared last so it wins on source order; inline background-position (per-creative
@@ -1081,6 +1177,28 @@ body{
       <button class="landing-card-cta creative" onclick="enterApp('creative')">Access your dashboard →</button>
     </div>
   </div>
+  <div class="landing-steps-wrap">
+    <div class="landing-steps-title">How it works</div>
+    <div class="landing-steps">
+      <div class="landing-step">
+        <div class="landing-step-num">1</div>
+        <div><div class="landing-step-label">Browse the directory</div><div class="landing-step-sub">Vetted SA creatives, real rates</div></div>
+      </div>
+      <div class="landing-step">
+        <div class="landing-step-num">2</div>
+        <div><div class="landing-step-label">Shortlist &amp; compare</div><div class="landing-step-sub">Side by side — rates &amp; skills</div></div>
+      </div>
+      <div class="landing-step">
+        <div class="landing-step-num">3</div>
+        <div><div class="landing-step-label">Post a brief</div><div class="landing-step-sub">We match the best-fit creatives</div></div>
+      </div>
+      <div class="landing-step">
+        <div class="landing-step-num">4</div>
+        <div><div class="landing-step-label">Connect &amp; book</div><div class="landing-step-sub">Enquire directly, lock it in</div></div>
+      </div>
+    </div>
+    <button class="landing-steps-link" onclick="enterApp('how')">See how it works →</button>
+  </div>
   <div class="landing-footer">© 2026 verbAfrica. All rights reserved.</div>
 </div>
 
@@ -1104,8 +1222,15 @@ body{
       <span class="ico" data-ico="heart"></span> Shortlist <span class="shortlist-count-badge" id="shortlistCountBadge" style="display:none">0</span>
     </button>
     <button class="post-brief-cta" onclick="showPage('brief')">+ Post Brief</button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMobileMenu('mobileMenuMain', this)"><span class="ico" data-ico="menu"></span></button>
   </div>
 </nav>
+<div class="nav-mobile-menu" id="mobileMenuMain">
+  <button class="nav-btn" onclick="closeMobileMenus();showPage('browse')">Browse</button>
+  <button class="nav-btn" onclick="closeMobileMenus();showPage('how')">How It Works</button>
+  <button class="nav-btn" onclick="closeMobileMenus();showPage('brief')">Post a Brief</button>
+  <button class="nav-btn" onclick="closeMobileMenus();showPage('shortlist')">My Shortlist</button>
+</div>
 
 
 <!-- CREATIVE NAV (shown when in creative mode) -->
@@ -1128,8 +1253,17 @@ body{
   <div class="nav-actions">
     <button class="nav-btn" onclick="cpSwitchToClient()" style="color:#6B7280;font-size:12px;">Switch to Client →</button>
     <button class="post-brief-cta" onclick="cpEditProfile()" style="background:linear-gradient(135deg,#7C3AED,#7C3AED);">Edit Profile</button>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="toggleMobileMenu('mobileMenuCp', this)"><span class="ico" data-ico="menu"></span></button>
   </div>
 </nav>
+<div class="nav-mobile-menu" id="mobileMenuCp">
+  <button class="nav-btn" onclick="closeMobileMenus();cpShowTab('dash')">Dashboard</button>
+  <button class="nav-btn" onclick="closeMobileMenus();cpShowTab('profile')">My Profile</button>
+  <button class="nav-btn" onclick="closeMobileMenus();cpShowTab('enquiries')">Enquiries</button>
+  <button class="nav-btn" onclick="closeMobileMenus();cpShowTab('epk')">My EPK</button>
+  <button class="nav-btn" onclick="closeMobileMenus();cpEditProfile()">Edit Profile</button>
+  <button class="nav-btn" onclick="closeMobileMenus();cpSwitchToClient()">Switch to Client →</button>
+</div>
 
 <!-- ══════════ BROWSE PAGE ══════════ -->
 <div class="page" id="page-browse">
@@ -1418,6 +1552,7 @@ body{
       </div>
       <h1 class="cp-select-title">Welcome back.</h1>
       <p class="cp-select-sub">Select your profile to access your dashboard</p>
+      <p class="cp-select-note">Demo preview — login &amp; sign-up coming soon</p>
     </div>
     <div class="cp-select-grid" id="cpSelectGrid"></div>
     <div class="cp-select-footer">
@@ -1452,6 +1587,7 @@ body{
         </div>
 
         <!-- Stats row -->
+        <div class="cp-section-title">Your Stats <span class="cp-preview-pill">Sample data</span></div>
         <div class="cp-stats-row">
           <div class="cp-stat-card">
             <div class="cp-stat-num">142</div>
@@ -1494,7 +1630,7 @@ body{
         </div>
 
         <!-- Recent activity -->
-        <div class="cp-section-title">Recent Activity</div>
+        <div class="cp-section-title">Recent Activity <span class="cp-preview-pill">Sample data</span></div>
         <div class="cp-activity-list">
           <div class="cp-activity-item">
             <div class="cp-activity-dot green"></div>
@@ -1567,7 +1703,7 @@ body{
       <div class="cp-enquiries-inner">
         <div class="cp-section-header">
           <div>
-            <div class="cp-section-title" style="margin-bottom:4px;">Enquiries</div>
+            <div class="cp-section-title" style="margin-bottom:4px;">Enquiries <span class="cp-preview-pill">Sample data</span></div>
             <p style="font-size:14px;color:var(--muted);">Incoming briefs and booking requests from clients</p>
           </div>
           <div class="cp-enq-filter-row">
@@ -1693,6 +1829,14 @@ function igUrl(h){ return 'https://instagram.com/' + igHandle(h); }
 function igLink(handle, attrs=''){
   return `<a href="${igUrl(handle)}" target="_blank" rel="noopener" ${attrs}>${icon('instagram')} ${handle}</a>`;
 }
+/* Verified check badge — cohort members are vetted by verbAfrica. */
+function verifiedBadge(c, withText=false){
+  if(!c.verified) return '';
+  return `<span class="verified-badge" title="Verified by verbAfrica" aria-label="Verified creative">${icon('check')}${withText?'<span class="vb-text">Verified</span>':''}</span>`;
+}
+/* Priced listings get a booking CTA; POA listings get a quote CTA. */
+function isPriced(c){ return c.minRate > 0; }
+function ctaLabel(c){ return isPriced(c) ? 'Book Now' : 'Request a Quote'; }
 
 /* ─── ICONS (Lucide-style inline SVG, replaces emoji) ─── */
 const ICONS = {
@@ -1720,6 +1864,7 @@ const ICONS = {
   edit:`<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>`,
   clock:`<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
   doc:`<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>`,
+  menu:`<svg viewBox="0 0 24 24"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>`,
 };
 /* Emit an icon placeholder for use inside template strings; hydrated by hydrateIcons(). */
 function icon(name, cls=''){ return `<span class="ico ${cls}" data-ico="${name}"></span>`; }
@@ -1933,7 +2078,7 @@ function renderGrid(){
       </div>
       <div class="listing-body">
         <div class="listing-top">
-          <div class="listing-name">${c.name}</div>
+          <div class="listing-name">${c.name} ${verifiedBadge(c)}</div>
           <div class="listing-rate">${c.rateLabel}</div>
         </div>
         <div class="listing-role">${c.role}</div>
@@ -1943,11 +2088,14 @@ function renderGrid(){
           <div class="listing-location">${c.location||'South Africa'}</div>
         </div>
         <div class="listing-bottom-row">
-          <div class="listing-avail ${c.minRate===0&&c.rateLabel==='POA'?'poa':'avail'}">
-            ${c.minRate===0&&c.rateLabel==='POA'?'◎ Rate on request':'● Available'}
+          <div class="listing-avail ${isPriced(c)?'avail':'poa'}">
+            ${isPriced(c)?'● Available':'◎ Custom quotes — tell us about your project'}
           </div>
           ${c.contact?.instagram?igLink(c.contact.instagram,`class="listing-ig" title="View on Instagram" onclick="event.stopPropagation()"`):''}
         </div>
+        <button class="listing-cta ${isPriced(c)?'book':'quote'}"
+          aria-label="${ctaLabel(c)}: ${c.name}"
+          onclick="event.stopPropagation();openProfileEnquiry(${c.id})">${ctaLabel(c)}</button>
       </div>
     </div>`;
   }).join('');
@@ -1957,7 +2105,8 @@ function renderGrid(){
 /* ─── SHORTLIST ──────────────────────────────────────── */
 function toggleShortlist(id){
   const idx = state.shortlist.indexOf(id);
-  if(idx === -1){
+  const added = idx === -1;
+  if(added){
     state.shortlist.push(id);
     showToast('Added to shortlist', 'success');
   } else {
@@ -1965,6 +2114,11 @@ function toggleShortlist(id){
     showToast('Removed from shortlist');
   }
   saveShortlist(); updateShortlistNav(); renderGrid();
+  if(added){
+    // micro-interaction: pop the freshly rendered heart (reduced-motion users get none)
+    const heart = document.querySelector(`#card-${id} .listing-save-btn.saved`);
+    if(heart) heart.classList.add('pop');
+  }
   if(state.page === 'shortlist') renderShortlist();
 }
 function updateShortlistNav(){
@@ -2056,7 +2210,7 @@ function openCompareModal(){
     <div class="compare-col">
       <div class="compare-col-head">
         <div class="compare-col-avatar" ${avatarBg(c)}>${avatarText(c)}</div>
-        <div><div class="compare-col-name">${c.name}</div><div class="compare-col-role">${c.role}</div></div>
+        <div><div class="compare-col-name">${c.name} ${verifiedBadge(c)}</div><div class="compare-col-role">${c.role}</div></div>
       </div>
       <div class="compare-section">
         <div class="compare-section-title">Location</div>
@@ -2115,16 +2269,16 @@ function showProfile(id){
     <div class="detail-head">
       <div class="detail-avatar" role="img" aria-label="Photo of ${c.name}" ${avatarBg(c)}>${avatarText(c)}</div>
       <div style="flex:1">
-        <div class="detail-name">${c.name}${c.isNew?'<span class="detail-new-tag">New</span>':''}</div>
+        <div class="detail-name">${c.name} ${verifiedBadge(c, true)}${c.isNew?'<span class="detail-new-tag">New</span>':''}</div>
         <div class="detail-role">${c.role}</div>
         <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
           ${c.genres.map(g=>`<span class="tag">${g}</span>`).join('')}
           ${c.location?`<span class="tag amber">${c.location}</span>`:''}
         </div>
         <div class="detail-actions">
-          <button class="action-btn primary" onclick="openEnquiry(${id})">${icon('clipboard')} Send Enquiry</button>
+          <button class="action-btn primary" onclick="openEnquiry(${id})">${icon('clipboard')} ${ctaLabel(c)}</button>
           <button class="action-btn heart" id="heartBtn-${id}" onclick="toggleShortlistFromDetail(${id})">
-            ${icon('heart', inShortlist?'fill':'')} ${inShortlist?'In Shortlist':'Save'}
+            ${icon('heart', inShortlist?'fill':'')} ${inShortlist?'In Shortlist':'Add to Shortlist'}
           </button>
           <button class="action-btn secondary" onclick="addToCompareFromDetail(${id})">${icon('compare')} Compare</button>
         </div>
@@ -2144,10 +2298,11 @@ function showProfile(id){
       <div class="detail-section">
         <div class="section-label">Rates (2025 / 2026)</div>
         <div class="rates-grid">${ratesHtml}</div>
+        ${isPriced(c)?'':'<div class="poa-note">Rates are quoted per project — tell us about yours and get a custom quote, no commitment required.</div>'}
       </div>
       ${contactHtml}
       <div class="detail-section" id="enquirySection" style="display:none">
-        <div class="section-label">Send Enquiry to ${c.name}</div>
+        <div class="section-label">${isPriced(c)?'Book':'Request a quote from'} ${c.name}</div>
         <div class="enquiry-form">
           <div class="form-row">
             <div class="form-group">
@@ -2180,7 +2335,7 @@ function showProfile(id){
             <label class="form-label" for="eq-message">Message</label>
             <textarea class="form-textarea" id="eq-message" placeholder="Describe your project, date, venue, requirements…"></textarea>
           </div>
-          <button class="form-submit" onclick="sendEnquiry(${id})">Send Enquiry →</button>
+          <button class="form-submit" onclick="sendEnquiry(${id})">${isPriced(c)?'Send Booking Request →':'Request Quote →'}</button>
         </div>
       </div>
     </div>
@@ -2194,12 +2349,18 @@ function openEnquiry(id){
   s.style.display = s.style.display==='none' ? 'block' : 'none';
   if(s.style.display==='block') s.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
+/* Card CTA (Book Now / Request a Quote) — open the profile with the enquiry form ready. */
+function openProfileEnquiry(id){
+  showProfile(id);
+  const s = $('enquirySection');
+  if(s && s.style.display==='none') openEnquiry(id);
+}
 function toggleShortlistFromDetail(id){
   toggleShortlist(id);
   const inShortlist = state.shortlist.includes(id);
   const btn = $('heartBtn-'+id);
   if(btn){
-    btn.innerHTML = `${icon('heart', inShortlist?'fill':'')} ${inShortlist ? 'In Shortlist' : 'Save'}`;
+    btn.innerHTML = `${icon('heart', inShortlist?'fill':'')} ${inShortlist ? 'In Shortlist' : 'Add to Shortlist'}`;
     btn.className = 'action-btn heart';
     hydrateIcons(btn);
   }
@@ -2232,6 +2393,7 @@ async function sendEnquiry(id){
 
   const result = await submitToSheet({
     type: 'enquiry',
+    cta: isPriced(creative) ? 'book' : 'quote',
     creativeId: id,
     creativeName: creative.name,
     creativeRole: creative.role,
@@ -2345,7 +2507,21 @@ async function submitBrief(){
 
 /* ─── KEYBOARD ────────────────────────────────────────── */
 document.addEventListener('keydown', e=>{
-  if(e.key==='Escape'){ closeDetailDirect(); closeCompareModal(); }
+  if(e.key==='Escape'){ closeDetailDirect(); closeCompareModal(); closeMobileMenus(); }
+});
+
+/* ─── MOBILE MENU ────────────────────────────────────── */
+function toggleMobileMenu(menuId, btn){
+  const m = $(menuId);
+  const open = m.classList.toggle('open');
+  if(btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeMobileMenus(){
+  document.querySelectorAll('.nav-mobile-menu').forEach(el=>el.classList.remove('open'));
+  document.querySelectorAll('.nav-burger').forEach(b=>b.setAttribute('aria-expanded','false'));
+}
+document.addEventListener('click', e=>{
+  if(!e.target.closest('.nav-burger') && !e.target.closest('.nav-mobile-menu')) closeMobileMenus();
 });
 
 
@@ -2432,7 +2608,7 @@ function cpRenderProfile(c) {
       </div>
       <div class="listing-body">
         <div class="listing-top">
-          <div class="listing-name">${c.name}</div>
+          <div class="listing-name">${c.name} ${verifiedBadge(c)}</div>
           <div class="listing-rate">${c.rateLabel}</div>
         </div>
         <div class="listing-role">${c.role}</div>
@@ -2500,7 +2676,7 @@ function cpRenderEpk(c) {
       <div class="cp-epk-banner">
         <div class="cp-epk-avatar-lg" ${avatarBg(c)}>${avatarText(c)}</div>
         <div>
-          <div class="cp-epk-title">${c.name}</div>
+          <div class="cp-epk-title">${c.name} ${verifiedBadge(c)}</div>
           <div class="cp-epk-subtitle">${c.role} &nbsp;·&nbsp; ${c.location || 'South Africa'}</div>
         </div>
       </div>
