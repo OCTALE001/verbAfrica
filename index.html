@@ -610,11 +610,9 @@ body{
 /* ─── HOW IT WORKS ────────────────────────────── */
 .how-page{padding:48px 32px;}
 .how-hero{text-align:center;max-width:600px;margin:0 auto 56px;}
-.how-hero h1{font-size:34px;font-weight:900;margin-bottom:12px;
-  background:linear-gradient(90deg,var(--purple-l),var(--blue-l));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.how-hero h1{font-size:34px;font-weight:900;margin-bottom:12px;color:var(--text);}
 .how-hero p{font-size:16px;color:var(--muted);line-height:1.7;}
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-bottom:48px;}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:0 auto 48px;max-width:1000px;}
 .step-card{
   background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;
   text-align:center;position:relative;
@@ -698,7 +696,7 @@ body{
 }
 .landing-cards{
   display:flex;gap:24px;padding:0 24px 60px;
-  flex-wrap:wrap;justify-content:center;width:100%;max-width:900px;
+  flex-wrap:wrap;justify-content:center;width:100%;max-width:1200px;
 }
 .landing-card{
   background:#fff;border-radius:18px;padding:40px 36px 32px;
@@ -1156,47 +1154,24 @@ body{
   <div class="landing-cards">
     <div class="landing-card">
       <div class="landing-card-icon client"><span class="ico" data-ico="search"></span></div>
-      <h2>I'm a Client</h2>
-      <p>Find and book talented artists, professional equipment, and skilled technicians for your event</p>
-      <ul>
-        <li>Browse verified professionals</li>
-        <li>View ratings and reviews</li>
-        <li>Easy booking process</li>
-      </ul>
-      <button class="landing-card-cta client" onclick="enterApp('browse')">Start browsing →</button>
+      <h2>For clients</h2>
+      <p>Book vetted creatives for your brand or event.</p>
+      <button class="landing-card-cta client" onclick="enterApp('browse')">Browse creatives →</button>
+    </div>
+    <div class="landing-card">
+      <div class="landing-card-icon creative"><span class="ico" data-ico="star"></span></div>
+      <h2>For creatives</h2>
+      <p>We curate by invitation. Put yourself forward.</p>
+      <button class="landing-card-cta creative" onclick="enterApp('getinvolved')">Apply to join →</button>
     </div>
     <div class="landing-card">
       <div class="landing-card-icon creative"><span class="ico" data-ico="briefcase"></span></div>
-      <h2>I'm a Creative</h2>
-      <p>Showcase your talent, manage bookings, and grow your entertainment business</p>
-      <ul>
-        <li>Create your profile</li>
-        <li>Manage your listings</li>
-        <li>Track bookings and earnings</li>
-      </ul>
-      <button class="landing-card-cta creative" onclick="enterApp('creative')">Access your dashboard →</button>
+      <h2>For partners</h2>
+      <p>Venues, brands, agencies — let's build together.</p>
+      <button class="landing-card-cta creative" onclick="enterApp('getinvolved')">Partner with us →</button>
     </div>
   </div>
   <div class="landing-steps-wrap">
-    <div class="landing-steps-title">How it works</div>
-    <div class="landing-steps">
-      <div class="landing-step">
-        <div class="landing-step-num">1</div>
-        <div><div class="landing-step-label">Browse the directory</div><div class="landing-step-sub">Vetted SA creatives, real rates</div></div>
-      </div>
-      <div class="landing-step">
-        <div class="landing-step-num">2</div>
-        <div><div class="landing-step-label">Shortlist &amp; compare</div><div class="landing-step-sub">Side by side — rates &amp; skills</div></div>
-      </div>
-      <div class="landing-step">
-        <div class="landing-step-num">3</div>
-        <div><div class="landing-step-label">Post a brief</div><div class="landing-step-sub">We match the best-fit creatives</div></div>
-      </div>
-      <div class="landing-step">
-        <div class="landing-step-num">4</div>
-        <div><div class="landing-step-label">Connect &amp; book</div><div class="landing-step-sub">Enquire directly, lock it in</div></div>
-      </div>
-    </div>
     <button class="landing-steps-link" onclick="enterApp('how')">See how it works →</button>
   </div>
   <div class="landing-footer">© 2026 verbAfrica. All rights reserved.</div>
@@ -1457,6 +1432,50 @@ body{
   </div>
 </div>
 
+<!-- ══════════ GET INVOLVED PAGE ══════════ -->
+<div class="page" id="page-getinvolved">
+  <div class="brief-page">
+    <div class="page-hero">
+      <h1><span class="ico" data-ico="heart"></span> Get Involved</h1>
+      <p>Creative, brand or partner — tell us a little about yourself and how you'd like to be part of verbAfrica. We read every message.</p>
+    </div>
+    <div class="brief-form-card">
+      <h2>Tell us about yourself</h2>
+      <p>We'll be in touch personally.</p>
+
+      <div class="brief-field">
+        <label class="brief-label" for="giRole">I'm reaching out as a…</label>
+        <select class="brief-select" id="giRole">
+          <option value="">Select one…</option>
+          <option value="creative">Creative / talent wanting to join</option>
+          <option value="brand">Brand / event organiser</option>
+          <option value="partner">Partner / collaborator</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+
+      <div class="brief-2col">
+        <div class="brief-field">
+          <label class="brief-label" for="giName">Your name</label>
+          <input type="text" class="brief-input" id="giName" placeholder="Full name">
+        </div>
+        <div class="brief-field">
+          <label class="brief-label" for="giContact">Email / WhatsApp</label>
+          <input type="text" class="brief-input" id="giContact" placeholder="you@email.com or 0821234567">
+        </div>
+      </div>
+
+      <div class="brief-field">
+        <label class="brief-label" for="giMessage">Tell us more</label>
+        <textarea class="brief-textarea" id="giMessage"
+          placeholder="A little about you and how you'd like to get involved — your craft, your brand, links to your work, anything that helps us get to know you."></textarea>
+      </div>
+
+      <button class="brief-submit" onclick="submitGetInvolved()">Send →</button>
+    </div>
+  </div>
+</div>
+
 <!-- ══════════ HOW IT WORKS PAGE ══════════ -->
 <div class="page" id="page-how">
   <div class="how-page">
@@ -1467,26 +1486,18 @@ body{
 
     <div class="steps-grid">
       <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-icon"><span class="ico" data-ico="search"></span></div>
         <div class="step-title">Browse the Directory</div>
         <div class="step-desc">Explore a growing roster of vetted South African creatives. Filter by category, budget and location. Read bios, see real rates and highlights.</div>
       </div>
       <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-icon"><span class="ico" data-ico="heart"></span></div>
         <div class="step-title">Shortlist Your Picks</div>
         <div class="step-desc">Save profiles you love to your shortlist. Compare them side by side — rates, skills and notable work — before committing.</div>
       </div>
       <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-icon"><span class="ico" data-ico="clipboard"></span></div>
         <div class="step-title">Post a Brief</div>
         <div class="step-desc">Describe your project, timeline and budget. Our matching engine instantly surfaces the best-fit creatives for your brief.</div>
       </div>
       <div class="step-card">
-        <div class="step-num">4</div>
-        <div class="step-icon"><span class="ico" data-ico="message"></span></div>
         <div class="step-title">Connect & Book</div>
         <div class="step-desc">Send an enquiry directly from any profile. Receive proposals, align on scope and lock in your booking — all in one place.</div>
       </div>
@@ -1529,6 +1540,16 @@ body{
         <div class="how-cta-btns">
           <button class="btn btn-primary" onclick="showPage('browse')">Browse Creatives</button>
           <button class="btn btn-outline" onclick="showPage('brief')">Post a Brief</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-cta" style="margin-top:20px;">
+      <div class="how-cta-inner">
+        <h2>Want to get involved?</h2>
+        <p>Creative, brand or partner — if you'd like to be part of verbAfrica, we'd love to hear from you.</p>
+        <div class="how-cta-btns">
+          <button class="btn btn-primary" onclick="showPage('getinvolved')">Get Involved →</button>
         </div>
       </div>
     </div>
@@ -2503,6 +2524,40 @@ async function submitBrief(){
   }
 
   $('briefMatches')?.scrollIntoView({behavior:'smooth'});
+}
+
+/* ─── GET INVOLVED FORM ──────────────────────────────── */
+async function submitGetInvolved(){
+  const role = $('giRole').value;
+  const name = $('giName').value.trim();
+  const contact = $('giContact').value.trim();
+  const message = $('giMessage').value.trim();
+  if(!name || !contact){ showToast('Please add your name and contact'); return; }
+
+  const btn = document.querySelector('#page-getinvolved .brief-submit');
+  const originalText = btn?.textContent;
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+
+  const result = await submitToSheet({
+    type: 'get_involved',
+    role: role,
+    name: name,
+    contact: contact,
+    message: message,
+    sourceUrl: window.location.href,
+    submittedAt: new Date().toISOString()
+  });
+
+  if(btn){ btn.disabled = false; btn.textContent = originalText || 'Send →'; }
+
+  if(result.ok){
+    showToast("Thanks — got it! We'll be in touch personally", 'success');
+    $('giRole').value=''; $('giName').value=''; $('giContact').value=''; $('giMessage').value='';
+  } else if(result.reason === 'unconfigured'){
+    showToast(`Form not yet live — please email ${window.VA_CONFIG.CONTACT_FALLBACK}`);
+  } else {
+    showToast(`Couldn't send — please email ${window.VA_CONFIG.CONTACT_FALLBACK}`);
+  }
 }
 
 /* ─── KEYBOARD ────────────────────────────────────────── */
